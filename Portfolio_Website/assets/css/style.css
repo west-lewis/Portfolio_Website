@@ -25,14 +25,14 @@ a:hover {
 
 h1,
 h2{
-  font-family: "Francois One", sans-serif;
+  font-family: "Futura", sans-serif;
   text-align: center;
 }
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Futura", sans-serif;
   text-align: center;
 }
 
@@ -135,6 +135,9 @@ h6 {
   background: #083D77;
   z-index: 997;
   padding: 15px 0;
+  border-bottom-left-radius: 100% 100%;
+  border-bottom-right-radius: 100% 100%;
+  padding-left: 1rem;
 }
 
 #header.header-scrolled {
@@ -154,15 +157,16 @@ h6 {
 
 #header .logo a {
   color: #fff;
+  list-style: none;
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 10rem;
 }
 
 @media (max-width: 992px) {
   #header .logo {
-    font-size: 28px;
+    font-size: 10px;
   }
 }
 
@@ -174,32 +178,31 @@ h6 {
 */
 .navbar {
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+  display: flex;
   justify-content: center;
 }
 
 .navbar ul {
   margin: 0;
   padding: 0;
-  list-style: none;
   align-items: center;
+  display: flex;
+  list-style: none;
 }
 
 .navbar li {
-  position: relative;
+  justify-content: center;
 }
 
 .navbar a,
 .navbar a:focus {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-size: 14px;
+  padding: 10px 10px 10px 10px;
   color: #ffffff;
-  white-space: nowrap;
   transition: 0.3s;
+  font-size: 12px;
+  line-height: 0;
+  margin: 1rem;
 }
 
 .navbar a i,
@@ -220,7 +223,7 @@ h6 {
 .navbar .getstarted:focus {
   background: #2487ce;
   padding: 8px 20px;
-  margin-left: 30px;
+  margin: 1rem;
   border-radius: 4px;
   color: #fff;
 }
@@ -412,8 +415,7 @@ h6 {
   height: 100vh;
   position: relative;
   background-size: cover;
-  background-color: #083D77;
-  position: relative;
+  background-color: #FFF7E1;
 }
 
 #hero .duo {
@@ -421,13 +423,11 @@ h6 {
   height: 100vh;
   position: relative;
   background-size: cover;
-  background-color: #083D77;
-  position: relative;
+  background-color: #FFF7E1;
 }
 
 #hero:before {
-  content: "";
-  background: #083D77;
+  background: #FFF7E1;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -444,10 +444,9 @@ h6 {
   font-size: 56px;
   font-weight: 700;
   line-height: 72px;
-  color: #fff;
   outline-color: #000;
-  font-family: "Poppins", sans-serif;
-  background-image: ;
+  font-family: "Futura", sans-serif;
+  background-color: #FFF7E1;
 }
 
 #hero h2 {
@@ -675,15 +674,8 @@ section {
 /*--------------------------------------------------------------
 # About Video
 --------------------------------------------------------------*/
-.about-video .content {
-  font-size: 15px;
-}
 
-.about-video .content h3 {
-  font-weight: 700;
-  font-size: 24px;
-  color: #124265;
-}
+
 
 .about-video .content ul {
   list-style: none;
@@ -691,17 +683,14 @@ section {
 }
 
 .about-video .content ul li {
-  padding-bottom: 10px;
-  padding-left: 28px;
-  position: relative;
-}
-
-.about-video .content ul i {
-  font-size: 24px;
   color: #2487ce;
   position: absolute;
   left: 0;
   top: -2px;
+  padding-bottom: 10px;
+  padding-left: 28px;
+  position: relative;
+  
 }
 
 .about-video .content p:last-child {
