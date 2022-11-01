@@ -133,11 +133,12 @@ h6 {
 #header {
   transition: all 0.5s;
   background: #083D77;
-  z-index: 997;
-  padding: 15px 0;
-  border-bottom-left-radius: 100% 100%;
-  border-bottom-right-radius: 100% 100%;
-  padding-left: 1rem;
+  padding: 1rem;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  height: fit-content;
 }
 
 #header.header-scrolled {
