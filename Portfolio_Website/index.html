@@ -39,12 +39,11 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container align-items-center">
+  <header id="header" class="fixed-top align-items-center">
+    <div class="container">
 
       <h1 class="logo"><img src="assets/img/Menu_Icon.png" class="img-fluid" alt="">
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -54,7 +53,7 @@
           <li><a class="nav-link scrollto" href="#services">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
   </header><!-- End Header -->
@@ -65,16 +64,22 @@
       <div class="row">
         
           <div class="align-items-center">
-            <img src="assets/img/Hero_Image.png" class="img-fluid" alt="">
-            <h1>WHAT UP? 
-              I’M WEST LEWIS. 
-              I DESIGN UI/IxD SYSTEMS FOR HUMANS TO ENJOY. </h1>
-            <p>I am a UI/IxD designer bringing skills in user research, unique design asset creation and implementation, as well as game design.  As a curious and creative problem solver, thorough results are delivered in a short turnaround. I bring skills in Figma, the Adobe Suite, Miro, coupled with knowledge of current game engines and 3D asset pipelines.. With a BA in 3D Game Art and a certification in UX/UI through UC Davis, I have all the skills and experience you're looking for.
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="assets/img/Hero_Image.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-6">
+                <h1>HOWDY!</h1>
+                <h1>I’M WEST LEWIS.</h1>
+                <h1>I DESIGN UI/IxD SYSTEMS FOR HUMANS TO ENJOY.</h1>
+                <p>I am a UI/IxD designer bringing skills in user research, unique design asset creation and implementation, as well as game design.  As a curious and creative problem solver, thorough results are delivered in a short turnaround. I bring skills in Figma, the Adobe Suite, Miro, coupled with knowledge of current game engines and 3D asset pipelines.. With a BA in 3D Game Art and a certification in UX/UI through UC Davis, I have all the skills and experience you're looking for.
 
-              Utilizing my skills, I have conducted website evaluations for the public and private sector, crafted websites and developed assets, and expedited e-commerce workflows.
+                 Utilizing my skills, I have conducted website evaluations for the public and private sector, crafted websites and developed assets, and expedited e-commerce workflows.
               
-              Crafting accessible and intuitive experiences for users is my goal when building out designs. Combining a personal passion for heuristics, practiced strengths in modern user experience and interface design, and a multifaceted work history, I am a valuable contributor to any collaborative effort.
-              </p>
+                 Crafting accessible and intuitive experiences for users is my goal when building out designs. Combining a personal passion for heuristics, practiced strengths in modern user experience and interface design, and a multifaceted work history, I am a valuable contributor to any collaborative effort.
+               </p>
+              </div>
+            </div>
           </div>
         
       </div>
@@ -83,39 +88,29 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-     
-        <div class="row icon-boxes">
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <h4 class="title"><a href="">Step 1</a></h4>
-              <img src="assets/img/IMAGE_DOWNLOAD.png" class="img-fluid" alt="">
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
+    <!-- ======= featured ======= -->
+  <section id="featured" class="justify-content-center align-items-center">
+    <h1>FEATURED</h1>
+      <div class="Cimage">
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        <input type="radio" name="position" checked />
+        <input type="radio" name="position" />
+        <input type="radio" name="position" />
+        <main id="carousel">
+          <div class="Citem">
+            <img src="assets/img/PAWSCAR.png" class="img-fluid" alt="">
           </div>
-  
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <h4 class="title"><a href="">Step 2</a></h4>
-              <img src="assets/img/IMAGE_CUSTOMIZE.png" class="img-fluid" alt="">
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <h4 class="title"><a href="">Step 3</a></h4>
-              <img src="assets/img/IMAGE_FRIENDS.png" class="img-fluid" alt="">
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
+          <div class="Citem">
+            <img src="assets/img/FCCCAR.png" class="img-fluid" alt="">
+        </div>
+        <div class="Citem">
+            <img src="assets/img/BnRCAR.png" class="img-fluid" alt="">
+        </div>
+        <main>
       </div>
-    </section><!-- End About Section -->
+  </section><!-- End About Section -->
 
-    
 
     <!-- ======= About Video Section ======= -->
     <section id="about-video" class="about-video">
@@ -151,27 +146,6 @@
 
       </div>
     </section><!-- End About Video Section -->
-
-
-
-   
-   
-
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
-        <div class="text-center">
-          <h3>FRIEND TESTIMONIALS</h3>
-          <img src="assets/img/Group 2608865.png" class="img-fluid" alt="">
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">MORE</a>
-        </div>
-      </div>
-    </section><!-- End Cta Section -->
-
-    
-
-    
    
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -256,19 +230,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>Toms New Condo, Los Angeles, CA 90001</p>
+                <p>Sacramento, CA 95831</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>contact@pal.com</p>
+                <p>westselewis@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 555 555 5555</p>
+                <p>+1 650 228 8852</p>
               </div>
 
             </div>
@@ -314,30 +288,30 @@
 
     <div class="footer-top">
       <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
 
           <div class="col-lg-3 col-md-3 footer-contact">
             <h1 class="logo"><img src="assets/img/Menu_Icon.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-3 col-md-3 footer-links">
-            <h3>DOWNLOAD</h3>
+
             <ul>
-              <li><i class="bx"></i> <a href="#">The App</a></li>
+              <li><i class="bx"></i> <a href="#">Works</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-3 footer-links">
-            <h4>ABOUT</h4>
+
             <ul>
-              <li><i class="bx"></i> <a href="#">Our Mission</a></li>
+              <li><i class="bx"></i> <a href="#">Resume</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-3 footer-links">
-            <h4>MORE</h4>
+
             <ul>
-              <li><i class="bx"></i> <a href="#">Contact Us</a></li>
+              <li><i class="bx"></i> <a href="#">Contact</a></li>
             </ul>
           </div>
 
