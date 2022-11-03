@@ -8,9 +8,13 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  max-width: fit-content;
 }
 
 a {
@@ -25,32 +29,70 @@ a:hover {
 
 h1,
 h2{
-  font-family: "Futura", sans-serif;
+  font-family: "Futura Bk", sans-serif;
   text-align: center;
+  color: #000;
+  margin: 0%;
 }
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Futura", sans-serif;
+  font-family: "Futura Bk", sans-serif;
   text-align: center;
+  margin: 0%;
 }
 
+p{
+  font-family: "Futura Bk BT", sans-serif;
+  color: #000;
+  margin: 0%;
+
+}
+
+#one{
+  font-size: 16px;
+  text-align: center;
+  font-family: "Futura Bk BT", sans-serif;
+  color: #000;
+
+}
+
+#two{
+  font-family: "Futura Bk BT", sans-serif;
+  color: #000;
+  padding: 5%;
+  font-size: 28px;
+}
+
+#three{
+  font-family: "Futura Bk BT", sans-serif;
+  color: #000;
+
+}
+
+.bi{
+  align-items: center;
+  background-image: url("../assets/img/UP_ARROW.png");
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
+
+
+
 .back-to-top {
   position: fixed;
-  visibility: hidden;
+  visibility: visible;
   opacity: 0;
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #083D77;
+  background-image: url("../assets/img/UP_ARROW.png");
   width: 3rem;
   height: 3rem;
-  border-radius: 4px;
   transition: all 0.4s;
+  box-shadow: 0px 3px 15px 3px #000;
 }
 
 .back-to-top i {
@@ -133,29 +175,30 @@ h6 {
 #header {
   transition: all 0.5s;
   background-image: url("../../assets/img/Header_Back.png");
-  background-size: 50%;
+  
+  
 
 }
 
 #header.header-scrolled {
-
+  box-shadow: 0px 3px 15px 5px #000;
 }
 
 #header .logo {
+  
 
-  font-weight: 300;
-  letter-spacing: .2rem;
 }
 
 #header .logo a {
   font-size: 16px;
+  letter-spacing: 2px;
   color: #fff;
   list-style: none;
   font-family: "Futura", sans-serif;
 }
 
 #header .logo img {
-  max-height: 10rem;
+  max-height: 5rem;
   pointer-events: fill;
 }
 
@@ -163,6 +206,13 @@ h6 {
   #header .logo {
     font-size: 10px;
   }
+}
+
+.responsive {
+  max-width: 100%;
+  height:auto;
+  align-items: center;
+  justify-content: center;
 }
 
 /*--------------------------------------------------------------
@@ -181,21 +231,24 @@ h6 {
 
 .navbar ul {
   list-style: none;
+  margin: 0%;
 }
 
 .navbar li {
   justify-content: center;
   align-items: center;
   display: inline-block;
+  background-color: rgb(134, 124, 97, .6);
+  border-radius: 10%;
 }
 
 .navbar a,
 .navbar a:focus {
   justify-content: space-between;
-  padding: 10px 10px 10px 10px;
+  padding: 1%;
   color: #ffffff;
   transition: 0.3s;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 0;
   margin: 1rem;
 }
@@ -408,17 +461,16 @@ h6 {
 #hero {
   width: 100vw;
   height: 100vh;
-  padding: 10%;
+  padding: 5%;
   position: center;
   background-size: cover;
   background-color: #FFF7E1;
 }
 
 #featured {
-  width: 100vw;
-  height: 100vh;
-  position: center;
-  align-items: center;
+  width: 100%;
+  height: auto;
+  height: fit-content;
   background-size: cover;
   background-color: #211C0E;
 
@@ -475,7 +527,7 @@ h6 {
   padding: 50px 30px;
   position: center;
   overflow: hidden;
-  background: #fff;
+  background: url("../../assets/img/UP_ARROW.png");
   box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -536,7 +588,7 @@ h6 {
 
   #hero h1 {
     font-size: 28px;
-    line-height: 36px;
+
   }
 
   #hero h2 {
@@ -549,32 +601,17 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  overflow: hidden;
+  overflow: visible;
 }
 
-.section-bg {
-  background-color: #f8fbfe;
-}
+
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 5%;
 }
 
-.section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 0;
-  color: #124265;
-}
 
-.section-title p {
-  margin-bottom: 0;
-  font-size: 14px;
-  color: #919191;
-}
 
 /*--------------------------------------------------------------
 # About
@@ -636,128 +673,7 @@ section {
 
 
 
-/*--------------------------------------------------------------
-# About Video
---------------------------------------------------------------*/
 
-
-
-.about-video .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about-video .content ul li {
-  color: #2487ce;
-  position: absolute;
-  left: 0;
-  top: -2px;
-  padding-bottom: 10px;
-  padding-left: 28px;
-  position: relative;
-  
-}
-
-.about-video .content p:last-child {
-  margin-bottom: 0;
-}
-
-.about-video .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#2487ce 50%, rgba(36, 135, 206, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-  overflow: hidden;
-}
-
-.about-video .play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.about-video .play-btn::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation: pulsate-btn 2s;
-  animation: pulsate-btn 2s;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: steps;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(36, 135, 206, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.about-video .play-btn:hover::after {
-  border-left: 15px solid #2487ce;
-  transform: scale(20);
-}
-
-.about-video .play-btn:hover::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  -webkit-animation: none;
-  animation: none;
-  border-radius: 0;
-}
-
-@-webkit-keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
-
-@keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
 
 /*--------------------------------------------------------------
 # Frequently Asked Questions
@@ -844,9 +760,15 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+#contact{
+
+  padding: 5%;
+  background: #FFF7E1;
+  justify-content: center;
+}
+
 .contact .info {
   width: 100%;
-  background: #fff;
 }
 
 .contact .info i {
@@ -855,7 +777,7 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #e3f0fa;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -864,27 +786,27 @@ section {
 }
 
 .contact .info h4 {
-  padding: 0 0 0 60px;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 5px;
   color: #124265;
 }
 
 .contact .info p {
-  padding: 0 0 0 60px;
+  padding: 1%;
   margin-bottom: 0;
   font-size: 14px;
   color: #217bbc;
 }
 
+
 .contact .info .email,
+.contact .info .location,
 .contact .info .phone {
-  margin-top: 40px;
+  padding: 5%;
 }
 
 .contact .info .email:hover i,
-.contact .info .address:hover i,
+.contact .info .location:hover i,
 .contact .info .phone:hover i {
   background: #2487ce;
   color: #fff;
@@ -892,11 +814,10 @@ section {
 
 .contact .php-email-form {
   width: 100%;
-  background: #fff;
 }
 
 .contact .php-email-form .form-group {
-  padding-bottom: 8px;
+  padding: 1%;
 }
 
 .contact .php-email-form .error-message {
@@ -944,7 +865,6 @@ section {
 .contact .php-email-form input,
 .contact .php-email-form textarea {
   border-radius: 0;
-  box-shadow: none;
   font-size: 14px;
   border-radius: 4px;
 }
@@ -959,20 +879,21 @@ section {
 }
 
 .contact .php-email-form textarea {
-  padding: 10px 12px;
+  padding: 2%;
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #2487ce;
+  background: #083DD7;
   border: 0;
   padding: 10px 30px;
   color: #fff;
   transition: 0.4s;
-  border-radius: 4px;
+  border-radius: 0px 0px 6px 6px;
+
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3194db;
+  background: 44px;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1060,44 +981,26 @@ section {
 #footer {
   font-size: 16px;
   background: #867C61;
+
 }
 
 #footer .footer-top {
-  padding: 60px 0 30px 0;
+  padding: 1%;
   background: #211C0E;
   box-shadow: 0px 15px 20px -15px #111;
 }
 
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-contact h3 {
-  font-size: 26px;
-  margin: 0 0 10px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 300;
-}
 
 #footer .footer-top .footer-contact p {
-  font-size: 14px;
+  font-size: 40px;
   line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  margin-bottom: 0%;
+  font-family: "Futura Bk BT", sans-serif;
   color: #777777;
 }
 
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #124265;
-  position: relative;
-  padding-bottom: 12px;
-}
-
 #footer .footer-top .footer-links {
-  margin-bottom: 30px;
+  margin-bottom: 0%;
 }
 
 #footer .footer-top .footer-links ul {
@@ -1114,13 +1017,14 @@ section {
 }
 
 #footer .footer-top .footer-links ul li {
-  padding: 10px 0;
+  padding: 0%;
   display: flex;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 #footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
+  padding-top: 0%;
 }
 
 #footer .footer-top .footer-links ul a {
@@ -1134,53 +1038,6 @@ section {
   text-decoration: none;
   color: #2487ce;
 }
-
-#footer .footer-newsletter {
-  font-size: 15px;
-}
-
-#footer .footer-newsletter h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #444444;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 5px;
-  text-align: left;
-  border: 1px solid #cde5f6;
-}
-
-#footer .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px 8px;
-  width: calc(100% - 100px);
-}
-
-#footer .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: -1px;
-  right: -2px;
-  bottom: -1px;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px 2px 20px;
-  background: #2487ce;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 0 5px 5px 0;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-#footer .footer-newsletter form input[type=submit]:hover {
-  background: #3194db;
 }
 
 #footer .credits {
@@ -1211,18 +1068,18 @@ section {
 /* carousel */ 
 
 .Cimage {
-  height: 90vh;
-  width: 90vw;
+  height: 100%;
+  width: 100%;
+  padding: 1%;
   display: grid;
   grid-template-rows: 33vh 33vh 33vh;
   grid-template-columns: 1fr 30px 30px 30px 1fr;
   align-items: center;
   justify-items: center;
-  padding: 1%;
-  margin: 1%;
+
 }
 
-main#carousel {
+div.carousel {
   grid-row: 2/ 3;
   grid-column: 3/ 5;
   width: 50vw;
@@ -1235,9 +1092,12 @@ main#carousel {
   --middle: 3;
   --position: 3;
   pointer-events: visibleFill;
+  transform-style: preserve-3d;
 }
 
 .prev, .next {
+  grid-row: 2/ 3;
+  grid-column: 3/ 5;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1282,7 +1142,7 @@ input:nth-of-type(1) {
   grid-column: 2 / 3;
   grid-row: 3 / 3;
 }
-input:nth-of-type(1):checked ~ main#carousel {
+input:nth-of-type(1):checked ~ div.carousel {
   --position: 1;
 }
 
@@ -1290,7 +1150,7 @@ input:nth-of-type(2) {
   grid-column: 3 / 4;
   grid-row: 3 / 3;
 }
-input:nth-of-type(2):checked ~ main#carousel {
+input:nth-of-type(2):checked ~ div.carousel {
   --position: 2;
 }
 
@@ -1298,7 +1158,7 @@ input:nth-of-type(3) {
   grid-column: 4 /5;
   grid-row: 3 / 3;
 }
-input:nth-of-type(3):checked ~ main#carousel {
+input:nth-of-type(3):checked ~ div.carousel {
   --position: 3;
 }
 
