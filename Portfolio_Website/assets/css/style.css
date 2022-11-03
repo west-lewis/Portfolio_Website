@@ -75,6 +75,15 @@ p{
   align-items: center;
   background-image: url("../assets/img/UP_ARROW.png");
 }
+
+.img{
+
+}
+
+.img-fluid{
+  max-width: 100%;
+  max-height: auto;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -83,7 +92,7 @@ p{
 
 .back-to-top {
   position: fixed;
-  visibility: visible;
+  visibility: none;
   opacity: 0;
   right: 15px;
   bottom: 15px;
@@ -671,10 +680,6 @@ section {
   text-decoration: none;
 }
 
-
-
-
-
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
@@ -1037,7 +1042,6 @@ section {
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
   color: #2487ce;
-}
 }
 
 #footer .credits {
