@@ -12,9 +12,8 @@
 
 
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
-  max-width: fit-content;
+  margin: 0%;
+  padding: 0%;
 }
 
 a {
@@ -33,6 +32,7 @@ h2{
   text-align: center;
   color: #000;
   margin: 0%;
+ 
 }
 h3,
 h4,
@@ -71,19 +71,54 @@ p{
 
 }
 
-.bi{
-  align-items: center;
-  background-image: url("../assets/img/UP_ARROW.png");
-}
 
 .img{
 
+}
+
+.flex-container-row{
+  resize: both;
+  overflow: auto;
+  height: 100%;
+  margin: 0%;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container-column{
+  resize: both;
+  overflow: auto;
+  height: 100%;
+  margin: 0%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card{
+  resize: both;
+  overflow: auto;
+  flex: 1;
+  padding: 1%;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  
+}
+
+@media (max-width: 768px) {
+  .flex-container-row{
+    flex-direction: column;
+  }
 }
 
 .img-fluid{
   max-width: 100%;
   max-height: auto;
 }
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -92,12 +127,10 @@ p{
 
 .back-to-top {
   position: fixed;
-  visibility: none;
-  opacity: 0;
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background-image: url("../assets/img/UP_ARROW.png");
+  background: url("../assets/img/UP_ARROW.png");
   width: 3rem;
   height: 3rem;
   transition: all 0.4s;
@@ -184,19 +217,25 @@ p{
 #header {
   transition: all 0.5s;
   background-image: url("../../assets/img/Header_Back.png");
-  
-  
-
+  max-width: auto;
+  max-height: 100%;
 }
 
 #header.header-scrolled {
   box-shadow: 0px 3px 15px 5px #000;
 }
 
-#header .logo {
-  
+#header .fixed-top {
+  position: fixed;
 
 }
+
+#faq{
+  max-width: auto;
+  max-height: auto;
+}
+
+
 
 #header .logo a {
   font-size: 16px;
@@ -211,9 +250,9 @@ p{
   pointer-events: fill;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   #header .logo {
-    font-size: 10px;
+    font-size: 16px;
   }
 }
 
@@ -345,7 +384,7 @@ p{
   visibility: visible;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 768px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
@@ -468,21 +507,18 @@ p{
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100vw;
-  height: 100vh;
-  padding: 5%;
-  position: center;
+  width: auto;
+  height: auto;
   background-size: cover;
   background-color: #FFF7E1;
 }
 
 #featured {
-  width: 100%;
-  height: auto;
-  height: fit-content;
-  background-size: cover;
+  font-size: 48px;
   background-color: #211C0E;
-
+  height: fit-content;
+  width: 100vw;
+  text-align: center;
 }
 
 #hero:before {
@@ -510,89 +546,12 @@ p{
   font-size: 5rem;
 }
 
-#hero .btn-get-started {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  padding: 14px 50px;
-  border-radius: 5px;
-  transition: 0.5s;
-  margin-top: 30px;
-  color: #fff;
-  background: #2487ce;
-}
 
-#hero .btn-get-started:hover {
-  background: #3194db;
-}
-
-#hero .icon-boxes {
-  margin-top: 100px;
-}
-
-#hero .icon-box {
-  padding: 50px 30px;
-  position: center;
-  overflow: hidden;
-  background: url("../../assets/img/UP_ARROW.png");
-  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  z-index: 1;
-}
-
-#hero .icon-box .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-#hero .icon-box .title a {
-  color: #124265;
-  transition: 0.3s;
-}
-
-#hero .icon-box .description {
-  font-size: 15px;
-  line-height: 28px;
-  margin-bottom: 0;
-}
-
-#hero .icon-box .icon {
-  margin-bottom: 20px;
-  padding-top: 10px;
-  display: inline-block;
-  transition: all 0.3s ease-in-out;
-  font-size: 36px;
-  line-height: 1;
-  color: #2487ce;
-}
-
-#hero .icon-box:hover {
-  transform: scale(1.08);
-}
-
-#hero .icon-box:hover .title a {
-  color: #2487ce;
-}
-
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
-}
-
-@media (max-height: 800px) {
-  #hero {
-    height: auto;
-  }
-}
 
 @media (max-width: 992px) {
   #hero {
     height: auto;
+    width: auto;
   }
 
   #hero h1 {
@@ -609,8 +568,9 @@ p{
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-section {
-  overflow: visible;
+.section {
+  overflow: none;
+  max-width: auto;
 }
 
 
@@ -683,12 +643,17 @@ section {
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
+#faq{
+  max-width: auto;
+  max-height: auto;
+}
+
 .faq .faq-list {
-  padding: 0 100px;
+  padding: 0%;
 }
 
 .faq .faq-list ul {
-  padding: 0;
+  padding: 0%;
   list-style: none;
 }
 
@@ -819,10 +784,13 @@ section {
 
 .contact .php-email-form {
   width: 100%;
+  justify-content: center;
+
 }
 
 .contact .php-email-form .form-group {
   padding: 1%;
+  text-align: center;
 }
 
 .contact .php-email-form .error-message {
@@ -867,9 +835,16 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
+textarea {
+  justify-content: center;
+  width: 45%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-  border-radius: 0;
   font-size: 14px;
   border-radius: 4px;
 }
@@ -880,11 +855,13 @@ section {
 }
 
 .contact .php-email-form input {
-  height: 44px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .contact .php-email-form textarea {
   padding: 2%;
+
 }
 
 .contact .php-email-form button[type=submit] {
@@ -930,6 +907,14 @@ section {
   min-height: 40px;
   margin-top: 72px;
 }
+
+.bi{
+  width:20px;
+  height: 20px;
+  background: blue;
+}
+
+
 
 @media (max-width: 992px) {
   .breadcrumbs {
@@ -1052,7 +1037,7 @@ section {
 
 #footer .social-links a {
   font-size: 18px;
-  display: inline-block;
+  display: flex;
   background: #083D77;
   color: #fff;
   line-height: 1;
@@ -1087,16 +1072,14 @@ div.carousel {
   grid-row: 2/ 3;
   grid-column: 3/ 5;
   width: 50vw;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  text-align: center;
   perspective: 100rem;
   --items: 3;
   --middle: 3;
   --position: 3;
   pointer-events: visibleFill;
-  transform-style: preserve-3d;
+
 }
 
 .prev, .next {

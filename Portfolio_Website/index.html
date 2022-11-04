@@ -17,23 +17,12 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: OnePage - v4.9.1
-  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -59,16 +48,13 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="">
-    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-      <div class="row">
-        
-          <div class="align-items-center">
-            <div class="row">
-              <div class="col-lg-6">
+        <section id="hero">
+          <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">         
+            <div class="flex-container-row">
+              <div class="card">
                 <img src="assets/img/Hero_Image.png" class="img-fluid" alt="">
               </div>
-              <div class="col-lg-6">
+              <div class="card">
                 <h1>HOWDY!</h1>
                 <h1>I’M WEST LEWIS.</h1>
                 <h1>I DESIGN UI/IxD SYSTEMS FOR HUMANS TO ENJOY.</h1>
@@ -81,24 +67,16 @@
               </div>
             </div>
           </div>
-        
-      </div>
-    </div>
-  </section><!-- End Hero -->
+        </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= featured ======= -->
   <section id="featured">
-
-    <div class="Cimage portfolio-details-slider">
-      <h1 class="header-grid">FEATURED</h1>
-      
-      <input type="radio" name="position" />
-      <input type="radio" name="position" checked/>
-      <input type="radio" name="position" />
-
-      <div class="carousel">
+    <div class="flex-container-column">
+        <div class="card"><h1>FEATURED</h1></div>
+        
+        <div class="carousel card">
           <div class="Citem">
             <img src="assets/img/PAWSCAR.png" class="responsive" alt="paws">
           </div>
@@ -108,7 +86,12 @@
           <div class="Citem">
             <img src="assets/img/BnRCAR.png" class="responsive" alt="barksnrec">
           </div>
-      </div>
+        </div>
+        <div class="card">
+          <input type="radio" name="position" />
+          <input type="radio" name="position" checked/>
+          <input type="radio" name="position" />
+        </div>
     </div>
   </section><!-- End About Section -->
 
@@ -192,21 +175,21 @@
         </div>
 
 
-
-          <div class="col-lg-8 mt-5 mt-lg-0">
+        <div>
+          <div class="flex-container-column">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row justify-content-center">
-                <div class="col-md-6 form-group">
+              <div class="flex-container-column">
+                <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
-                <div class="form-group mt-3">
+                <div class="form-group">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                 </div>   
-                <div class="form-group mt-3">
+                <div class="form-group">
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                 </div>
-                <div class="form-group mt-3">
+                <div class="form-group">
                   <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                   <button type="submit">Send it!</button>
                 </div>
@@ -215,42 +198,37 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Talk to you soon!</div>
               </div>
+            
             </form>
-
-            <div class="row mt-5">
-
-              <div class="col-lg-4">
-                <div class="info row">
-                  <div class="location">
-                    <i class="bi bi-geo-alt"></i>
-                    <h4>Location:</h4>
-                    <p id="one">Sacramento, CA 95831</p>
-                  </div>
-    
-                  <div class="email">
-                    <i class="bi bi-envelope"></i>
-                    <h4>Email:</h4>
-                    <p id="one">westselewis@gmail.com</p>
-                  </div>
-    
-                  <div class="phone">
-                    <i class="bi bi-phone"></i>
-                    <h4>Call:</h4>
-                    <p id="one">+1 650 228 8852</p>
-                  </div>
-    
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="">
+              <div class="info row">
+                <div class="location">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p id="one">Sacramento, CA 95831</p>
                 </div>
     
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p id="one">westselewis@gmail.com</p>
+                </div>
+    
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p id="one">+1 650 228 8852</p>
+                </div>                
               </div>
-
+            </div>
           </div>
-
         </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
+      </section><!-- End Contact Section -->
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -259,25 +237,25 @@
       <div class="container">
         <div class="row align-items-center">
 
-          <div class="col-lg-3 col-md-3 footer-contact">
+          <div class="footer-contact">
             <h1 class="logo"><img src="assets/img/Menu_Icon.png" class="img-fluid" alt="">
           </div>
 
-          <div class="col-lg-3 col-md-3 footer-links">
+          <div class="footer-links">
 
             <ul>
               <li><i class="bx"></i> <a href="#">Works</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-3 footer-links">
+          <div class="footer-links">
 
             <ul>
               <li><i class="bx"></i> <a href="#">Resume</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-3 footer-links">
+          <div class="footer-links">
 
             <ul>
               <li><i class="bx"></i> <a href="#">Contact</a></li>
@@ -290,7 +268,7 @@
       </div>
     </div>
 
-    <div class="container d-md-flex py-4">
+    <div class="container d-md-flex">
 
       <div class="me-md-auto text-center text-md-start">
         <div class="credits">
@@ -300,14 +278,14 @@
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/ -->
         </div>
       </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <div class="social-links">
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short back-to-top"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
