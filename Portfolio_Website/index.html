@@ -50,11 +50,11 @@
   <!-- ======= Hero Section ======= -->
         <section id="hero">
           <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">         
-            <div class="flex-container-row">
-              <div class="card">
+            <div class="flex-container-hero">
+              <div class="card-hero">
                 <img src="assets/img/Hero_Image.png" class="img-fluid" alt="">
               </div>
-              <div class="card">
+              <div class="card-hero">
                 <h1>HOWDY!</h1>
                 <h1>I’M WEST LEWIS.</h1>
                 <h1>I DESIGN UI/IxD SYSTEMS FOR HUMANS TO ENJOY.</h1>
@@ -76,7 +76,7 @@
     <div class="flex-container-column">
         <div class="card"><h1>FEATURED</h1></div>
         
-        <div class="carousel card">
+        <div class="carousel">
           <div class="Citem">
             <img src="assets/img/PAWSCAR.png" class="responsive" alt="paws">
           </div>
@@ -87,7 +87,7 @@
             <img src="assets/img/BnRCAR.png" class="responsive" alt="barksnrec">
           </div>
         </div>
-        <div class="card">
+        <div>
           <input type="radio" name="position" />
           <input type="radio" name="position" checked/>
           <input type="radio" name="position" />
@@ -228,64 +228,40 @@
           </div>
         </div>
       </section><!-- End Contact Section -->
-</main><!-- End #main -->
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-top">
-      <div class="container">
-        <div class="row align-items-center">
-
-          <div class="footer-contact">
-            <h1 class="logo"><img src="assets/img/Menu_Icon.png" class="img-fluid" alt="">
-          </div>
-
+      <div class="flex-container-footer">
+        <div class="card">
+          <h1 class="logo"><img src="assets/img/Menu_Icon.png" class="img-fluid" alt="">
+        </div>
+        <div class="card-footer-link"> 
           <div class="footer-links">
-
             <ul>
-              <li><i class="bx"></i> <a href="#">Works</a></li>
+              <li><div><a href="#">Works</a></div></li>
+              <li><div><a href="#">Resume</a></div></li>
+              <li><div><a href="#">Contact</a></div></li>
             </ul>
-          </div>
-
-          <div class="footer-links">
-
-            <ul>
-              <li><i class="bx"></i> <a href="#">Resume</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links">
-
-            <ul>
-              <li><i class="bx"></i> <a href="#">Contact</a></li>
-            </ul>
-          </div>
-
-          </div>
-
+          </div> 
         </div>
       </div>
     </div>
 
-    <div class="container d-md-flex">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/ -->
+    <!-- ======= Footer Socials======= -->
+    <div class="footer-bottom">
+      <div class="flex-container-social">
+        <div class="social-links">
+          <div class=""><a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a></div>
         </div>
       </div>
-      <div class="social-links">
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  <!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"></a>
+  <div class="back-to-top"><a href="#"><img src="assets/img/Back-to-Top.svg" class="img-fluid" alt=""></a></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
