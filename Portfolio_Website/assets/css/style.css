@@ -77,7 +77,7 @@ p{
   display: flex;
   flex-wrap: wrap;
   flex-basis: auto;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .flex-container-row{
@@ -121,23 +121,11 @@ p{
   justify-content: end;
 }
 
-.flex-container-column{
 
-  overflow: auto;
-  height: 100%;
-  width: auto;
-  margin: 0%;
-  padding: 1%;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
 
 .card{
   display: flex;
   flex-direction: column;
-
   padding: 1%;
   align-content: center;
   justify-content: center;
@@ -157,7 +145,7 @@ p{
 .card-footer-link{
   display: flex;
   flex-direction: column;
-  flex: 0 1 48%;
+
   padding: 1%;
   align-content: center;
   justify-content: center;
@@ -177,12 +165,8 @@ p{
   }
 }
 
-.img-fluid {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+.img {
+  object-fit: cover;
 }
 
 
@@ -194,7 +178,7 @@ p{
 
 .back-to-top {
   position: fixed;
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   max-width: 3rem;
@@ -205,7 +189,7 @@ p{
   width: 3rem;
   height: 3rem;
   transition: all 0.4s;
-  box-shadow: 0px 3px 15px 3px #000;
+  filter: drop-shadow(0px 3px 15px 3px rgb(0, 0, 0));
 }
 
 
@@ -1065,7 +1049,7 @@ textarea {
 #footer .footer-top .footer-links ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   padding: 0;
   margin: 0;
 }
