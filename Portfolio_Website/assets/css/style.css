@@ -67,6 +67,11 @@ p{
   height: 100%;
 }
 
+.img-carousel{
+  width: 50%;
+  height: 50%;
+}
+
 .flex-container-hero{
 
   height: 100%;
@@ -75,6 +80,20 @@ p{
   padding: 1%;
   align-content: center;
   display: flex;
+  flex-wrap: wrap;
+  flex-basis: auto;
+  justify-content: center;
+}
+
+.flex-container-featured{
+
+  height: 100%;
+  width: auto;
+  margin: 0%;
+  padding: 1%;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   flex-basis: auto;
   justify-content: center;
@@ -121,14 +140,20 @@ p{
   justify-content: end;
 }
 
-
-
 .card{
+  display: flex;
+  padding: 1%;
+  align-content: center;
+  justify-content: center;
+}
+
+.card-featured{
   display: flex;
   flex-direction: column;
   padding: 1%;
   align-content: center;
   justify-content: center;
+
   
 }
 
@@ -567,7 +592,7 @@ p{
 #featured {
   font-size: 48px;
   background-color: #211C0E;
-  height: fit-content;
+  height: 100vh;
   width: auto;
   text-align: center;
 }
@@ -1111,10 +1136,10 @@ textarea {
 /* carousel */ 
 
 .Cimage {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
   padding: 1%;
-  display: grid;
+  display: flex;
   grid-template-rows: 33vh 33vh 33vh;
   grid-template-columns: 1fr 30px 30px 30px 1fr;
   align-items: center;
@@ -1122,13 +1147,12 @@ textarea {
 
 }
 
-div.carousel {
+.carousel {
   grid-row: 2/ 3;
   grid-column: 3/ 5;
-  width: 100vh;
-  height: 100vh;
   padding: 1%;
   margin: 0%;
+  display: flex;
   text-align: center;
   overflow: auto;
   perspective: 100rem;
