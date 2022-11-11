@@ -265,7 +265,7 @@ p{
   color: #fff;
 }
 
-.back-to-top.active {
+.back-to-top.checked {
   visibility: visible;
   opacity: 1;
 }
@@ -346,112 +346,97 @@ p{
 /**
 * Desktop Navigation 
 */
-.flex-container-menu ul {
-  padding: 0;
-  margin: 0; 
-}
 
-.flex-container-menu input{
-  margin: 0%;
-  padding: 0%;
-}
 
 .circlenav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 15%;
+  
 }
 
 .circlenav ul{
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
 
 }
 
 .circlenav li{
-
+  opacity: 1;
   list-style-type: disc;
+}
 
+.circlenav a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .menu-toggler {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
   cursor:pointer;
   opacity: 1;
-  height: 132px;
-  width: 132px;
-  border-radius: 100%;
-  display:flex;
+  height: 8.25rem;
+  width: 8.25rem;
+  overflow: visible;
   padding: 0;
+  margin: 0;
+
 }
 
-input.menu-toggler [type="button" i] {
-  height: 132px;
-  width: 132px;
-  border-radius: 100%;
-  display:flex;
-  padding: 0;
+.menu-toggler input[type="checkbox" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 3px 4px;
+  padding: initial;
+  border: initial;
 }
 
-
-input.menu-toggler:checked{
-  height: 132px;
-  width: 132px;
-  border-radius: 100%;
-  display:flex;
-  padding: 0;
-  box-shadow: 5px 5px 5px #000;
+.menu-toggler:hover, 
+.menu-toggler:hover,
+.menu-toggler:hover {
+  background: none;
 }
-
-.menu-toggler:hover + label,
-.menu-toggler:hover + label:before,
-.menu-toggler:hover + label:after{
-  background: white;
-}
-.menu-toggler:checked + label {
+.menu-toggler:checked {
   background: transparent;
 }
-.menu-toggler:checked + label:before,
-.menu-toggler:checked + label:after{
-  top:0;
-  width:40px;
-  transform-origin: 50% 50%;
-}
-.menu-toggler:checked + label:before {
-  transform: rotate(45deg) translateY(-15px) translateX(-15px);
-}
-.menu-toggler:checked + label:after {
-  transform: rotate(-45deg);
-}
+
+
 .menu-toggler:checked ~ ul .menu-item { 
   opacity: 1;
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(1) {
-  transform: rotate(60deg) translate(-110px);
+  transform: rotate(0deg) translate(-110px);
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(2) {
-  transform: rotate(0deg) translateX(-110px);
+  transform: rotate(60deg) translateX(-110px);
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(3) {
-  transform: rotate(300deg) translateX(-110px);
+  transform: rotate(120deg) translateX(-110px);
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(4) {
-  transform: rotate(240deg) translateX(-110px);
+  transform: rotate(180deg) translateX(-110px);
 }
 
 .menu-toggler:checked ~ ul .menu-item a {
   pointer-events:auto;
 }
 
+
 .menu-item {
   position: absolute;
   display: flex;
-  border-radius: 100%;
+  border-radius: 50%;
   margin: 0%;
   padding: 0%;
   width: 5rem;
@@ -480,7 +465,7 @@ input.menu-toggler:checked{
 }
 
 .glow {
-  animation: svg-shadow 1.5s ease-in-out infinite alternate;
+  animation: svg-shadow 6s ease-in-out infinite alternate;
 }
 
 @keyframes svg-shadow {
@@ -1013,7 +998,7 @@ input:nth-of-type(3):checked ~ div.carousel {
   background-image: url("../../assets/img/Breadcrumb_Normal.png");
 }
 
-.activedot, .dot:hover {
+.checkeddot, .dot:hover {
   background-image: url("../../assets/img/Breadcrumb_Lit.png");
 }
 
