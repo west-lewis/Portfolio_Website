@@ -274,3 +274,18 @@
 })()
 
 
+
+// Setting up the Variables
+var menutoggle = document.getElementById("nav-action");
+var nav = document.getElementById("nav");
+
+
+//setting up the listener
+menutoggle.addEventListener("click", menutoggleClicked, false);
+
+
+//setting up the clicked Effect
+function menutoggleClicked() {
+  menutoggle.classList.toggle('active');
+  nav.classList.toggle('visible');
+}
