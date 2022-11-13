@@ -1,0 +1,23 @@
+<svg width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M56.739 26.4311L78.17 37.8487L99.601 26.4311L106.681 49.6586L129.909 56.7391L118.491 78.1701L129.909 99.6011L106.681 106.682L99.601 129.909L78.17 118.491L56.739 129.909L49.6585 106.682L26.431 99.6011L37.8486 78.1701L26.431 56.7391L49.6585 49.6586L56.739 26.4311Z" fill="#746132"/>
+<g filter="url(#filter0_f_226_52)">
+<path d="M78 19L94.2564 38.7536L119.719 36.2807L117.246 61.7436L137 78L117.246 94.2564L119.719 119.719L94.2564 117.246L78 137L61.7436 117.246L36.2807 119.719L38.7536 94.2564L19 78L38.7536 61.7436L36.2807 36.2807L61.7436 38.7536L78 19Z" fill="white"/>
+</g>
+<path d="M78 22L93.4298 40.7492L117.598 38.402L115.251 62.5702L134 78L115.251 93.4298L117.598 117.598L93.4298 115.251L78 134L62.5702 115.251L38.402 117.598L40.7492 93.4298L22 78L40.7492 62.5702L38.402 38.402L62.5702 40.7492L78 22Z" fill="#B6AD93"/>
+<circle cx="79" cy="78" r="33" fill="white"/>
+<g filter="url(#filter1_f_226_52)">
+<circle cx="79" cy="78" r="30" fill="#746132"/>
+</g>
+<defs>
+<filter id="filter0_f_226_52" x="15" y="15" width="126" height="126" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_226_52"/>
+</filter>
+<filter id="filter1_f_226_52" x="45" y="44" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_226_52"/>
+</filter>
+</defs>
+</svg>

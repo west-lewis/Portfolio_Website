@@ -38,9 +38,12 @@ h6 {
 }
 
 p{
+  font-size: 1.5rem;
   font-family: "Futura Bk BT", sans-serif;
-  color: #000;
-  margin: 0%;
+  color: #6b6b6b;
+  margin: 0;
+  padding: 0;
+  line-height: 2rem;
 
 }
 
@@ -420,7 +423,7 @@ a {
   height: auto;
   font-size: 1.4rem;
   transition: 0.2s;
-  color: rgb(126, 18, 18);
+  color: #7e1212;
   font-family: "Futura Md BT", sans-serif;
 }
 
@@ -440,8 +443,8 @@ a {
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-.glowRotate {
- 
+.menuToggle::before{
+  
   animation: glowRotate 10s linear infinite normal;
   animation-iteration-count: infinite;
 }
@@ -461,20 +464,15 @@ a {
 @keyframes glowRotate {
 
   from {
-    
     transform: translateY(0rem) rotate(0deg);
-
   }
 
   to {
-    
     transform: translateY(-2rem) rotate(360deg);
-
   }
-
 }
 
-.menutoggle {
+.menuToggle {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -486,14 +484,13 @@ a {
   margin: 0; 
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem:hover,
-.menutoggle.active  ~ nav.visible li.menuItem a:hover { 
+.menuToggle.active  ~ nav.visible li.menuItem:hover,
+.menuToggle.active  ~ nav.visible li.menuItem a:hover { 
   
-
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem,
-.menutoggle.active  ~ nav.visible li.menuItem a{ 
+.menuToggle.active  ~ nav.visible li.menuItem,
+.menuToggle.active  ~ nav.visible li.menuItem a{ 
   opacity: 1;
   -webkit-user-select: auto; 
   -ms-user-select: auto; 
@@ -501,23 +498,23 @@ a {
 
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem:nth-child(1) {
+.menuToggle.active  ~ nav.visible li.menuItem:nth-child(1) {
   transform: rotate(280deg) translateY(-10rem);
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem:nth-child(2) {
+.menuToggle.active  ~ nav.visible li.menuItem:nth-child(2) {
   transform: rotate(240deg) translateY(-10rem);
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem:nth-child(3) {
+.menuToggle.active  ~ nav.visible li.menuItem:nth-child(3) {
   transform: rotate(200deg) translateY(-10rem);
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem:nth-child(4) {
+.menuToggle.active  ~ nav.visible li.menuItem:nth-child(4) {
   transform: rotate(160deg) translateY(-10rem);
 }
 
-.menutoggle.active  ~ nav.visible li.menuItem a {
+.menuToggle.active  ~ nav.visible li.menuItem a {
   pointer-events:auto;
 }
 
@@ -533,15 +530,28 @@ a {
   width: 5rem;
   height: 5rem;
   opacity: 0;
-  transition: 0.5s;
-  background-color: #083DD7;
+  transition: 1s;
+
+}
+
+.menuItem img {
+  
+  z-index: 1;
+
+}
+
+.menuItem a {
+  z-index: 3;
+
 }
 
 
+
 .menuItem a:hover {
-  animation: "glow";
-  color: white;
+  animation: glow 10s linear infinite normal;
+  animation-iteration-count: infinite;
   font-size: 2rem;
+  opacity: 0;
 }
 
 
