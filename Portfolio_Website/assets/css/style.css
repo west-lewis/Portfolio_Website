@@ -24,6 +24,7 @@ h2{
   text-align: center;
   color: #000;
   margin: 0%;
+  padding: 0%;
   width: 100%;
   
  
@@ -38,11 +39,12 @@ h6 {
 }
 
 p{
+  width: 100%;
   font-size: 1.5rem;
   font-family: "Futura Bk BT", sans-serif;
   color: #6b6b6b;
   margin: 0;
-  padding: 0;
+  padding: 5%;
   line-height: 2rem;
 
 }
@@ -108,7 +110,7 @@ p{
 .flex-container-hero{
 
   height: 100%;
-  width: auto;
+  width: 100%;
   margin: 0%;
   padding: 1%;
   align-content: center;
@@ -208,6 +210,7 @@ p{
   padding: 1%;
   align-content: center;
   justify-content: center;
+  width: 100%;
   
 }
 
@@ -506,19 +509,19 @@ a {
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem:nth-child(1) {
-  transform: rotate(280deg) translateY(-10rem);
+  transform: rotate(270deg) translateY(-14rem);
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem:nth-child(2) {
-  transform: rotate(240deg) translateY(-10rem);
+  transform: rotate(235deg) translateY(-14rem);
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem:nth-child(3) {
-  transform: rotate(200deg) translateY(-10rem);
+  transform: rotate(200deg) translateY(-14rem);
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem:nth-child(4) {
-  transform: rotate(160deg) translateY(-10rem);
+  transform: rotate(160deg) translateY(-14rem);
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem a {
@@ -552,6 +555,9 @@ a {
 
 }
 
+.menuToggle.active {
+  animation: none;
+}
 
 
 .menuItem a:hover {
@@ -592,12 +598,11 @@ a {
 }
 
 #hero h1 {
+
   margin: 0%;
   padding: 0%;
   width: 100%;
   font-size: 56px;
-  font-weight: 700;
-  line-height: 72px;
   outline-color: #000;
   font-family: "Futura", sans-serif;
   background-color: #FFF7E1;
