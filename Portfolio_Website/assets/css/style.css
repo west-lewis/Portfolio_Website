@@ -486,7 +486,8 @@ a {
 
 .menuToggle.active  ~ nav.visible li.menuItem:hover,
 .menuToggle.active  ~ nav.visible li.menuItem a:hover { 
-  
+  animation: glow 10s linear infinite normal;
+  animation-iteration-count: infinite;
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem,
@@ -496,6 +497,12 @@ a {
   -ms-user-select: auto; 
   user-select: auto;
 
+}
+
+.menuToggle.active  ~ nav.visible li.menuItem:hover,
+.menuToggle.active  ~ nav.visible li.menuItem a:hover { 
+  animation: glow 10s linear infinite normal;
+  animation-iteration-count: infinite;
 }
 
 .menuToggle.active  ~ nav.visible li.menuItem:nth-child(1) {
