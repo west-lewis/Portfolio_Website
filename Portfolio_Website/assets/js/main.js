@@ -289,3 +289,18 @@ function menutoggleClicked() {
   menutoggle.classList.toggle('active');
   nav.classList.toggle('visible');
 }
+
+const outsideClickListener = event => {
+  const deltaX = event.offsetX - lastMouseDownX;
+  const deltaY = event.offsetY - lastMouseDownY;
+  const distSq = (deltaX * deltaX) + (deltaY * deltaY);
+  const isDrag = distSq > 3;
+  const isDragException = isDrag && !lastMouseDownWasOutside;
+
+  if (event.target.closest(selector) === null) { // or use: event.target.closest(selector) === null
+    element.style.display = 'none';
+    removeClickListener();
+    
+  }
+}
+
