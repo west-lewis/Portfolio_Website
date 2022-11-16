@@ -91,7 +91,7 @@
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 500) {
         backtotop.classList.add('active')
       } else {
         backtotop.classList.remove('active')
@@ -296,7 +296,7 @@
 
   function rotateCarousel() {
     var angle = selectedIndex / cellCount * -360;
-    carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
+    carousel.style.transform = 'translateZ(-18rem) rotateY(' + angle + 'deg)';
   }
 
   var prevButton = document.querySelector('.previous-button');

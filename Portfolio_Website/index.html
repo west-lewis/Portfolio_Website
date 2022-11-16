@@ -45,7 +45,7 @@
               </div>
                 
               <nav id="nav">
-                <ul>
+                <ul class="nav">
       
                   <li class="menuItem">s
       
@@ -98,9 +98,10 @@
                 
       <div class="flex-container-hero">
         <div class="card-hero">
-          <h1 class="spill">I'M WEST LEWIS</h1>
-          <h1 class="">I DESIGN UI/IxD SYSTEMS FOR HUMANS TO ENJOY</h1>
-          <p>I am a UI/IxD designer bringing skills in user research, unique design asset creation and implementation, as well as game design.  As a curious and creative problem solver, thorough results are delivered in a short turnaround. I bring skills in Figma, the Adobe Suite, Miro, coupled with knowledge of current game engines and 3D asset pipelines.. With a BA in 3D Game Art and a certification in UX/UI through UC Davis, I have all the skills and experience you're looking for.
+          <h1 data-aos="fade-down" data-aos-duration="3000" class="spill">I'M WEST</h1>
+          <h1 class="">I DESIGN UI/IxD SYSTEMS FOR HUMANS</h1>
+          <h3 data-aos="fade-up" data-aos-duration="3000" class="spill">TO ENJOY!</h2>
+          <p>I am a UI/IxD designer bringing skills in user research, unique design asset creation and implementation, as well as game design.  As a curious and creative problem solver, thorough results are delivered in a short turnaround. I bring skills in Figma, the Adobe Suite, Miro, coupled with knowledge of current game engines and 3D asset pipelines. With a BA in 3D Game Art and a certification in UX/UI through UC Davis, I have all the skills and experience you're looking for.
 
            Utilizing my skills, I have conducted website evaluations for the public and private sector, crafted websites and developed assets, and expedited e-commerce workflows.
         
@@ -128,14 +129,17 @@
     
             <div class="carousel__cell">
               <img src="assets/img/PAWSCAR.png"  alt="paws">
+              <p>Non-Profit Website Redesign</p>
             </div>
 
             <div class="carousel__cell">
               <img src="assets/img/FCCCAR.png"  alt="fcc">
+              <p>Government Website Redesign</p>
             </div>
 
             <div class="carousel__cell">
               <img src="assets/img/BnRCAR.png"  alt="barksnrec">
+              <p>App Design Challenge</p>
             </div>
 
           </div>
@@ -152,6 +156,7 @@
   </section><!-- End About Section -->
 
   <section id="resume">
+    <div class="resume"></div>
     <p>
     
     UI/IxD designer with a background in Game Art. Creative and quick learner with a passion for collaboration and exploration. Bachelors in 3D Game Art and currently enrolled in a UX/UI Boot Camp at UC Davis to obtain modern web and app development skills. Has audited and retooled private and public sector websites, and prototyped B2C/SaaS applications. 
@@ -197,6 +202,8 @@
     Bachelors in Game Art, BA - NewSchool of Architecture and Design
     San Diego, CA / Awarded in 2017
   </p>
+
+</div>
     </section>
     
    
@@ -204,12 +211,15 @@
    
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
+    <section id="contact">
+      <div class="flex-container-contact" data-aos="fade-up">
 
-        <div class="section-title">
-          <h1>CONTACT ME!</h1>
-          <p id="two">COLLABORATE AND CREATE</p>
+        <div class="card-contact">
+          <h1>CONTACT</h1>
+          <p>+</p>
+          <h1>COLLABORATE</h1>
+          <p>+</p>
+          <h1 class="spill">CREATE</h1>
         </div>
 
         <div class="map">
@@ -217,11 +227,11 @@
         </div>
 
 
-        <div>
+    
           <div class="flex-container-contact">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="flex-container-column">
+              
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
@@ -232,19 +242,18 @@
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                  <button type="submit">Send it!</button>
+                  <textarea class="form-control" name="message" rows="5" id="message" placeholder="Message" required></textarea>
+                  <div><button type="submit">Send it!</button></div>
+
                 </div>
-                <div class="my-3">
-                <div class="loading">Just a sec...</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Talk to you soon!</div>
-              </div>
+               
+
+             
             
             </form>
           </div>
-        </div>
-        <div>
+  
+        
           <div class="flex-container-contact">
             
 
@@ -267,7 +276,7 @@
                 </div>                
              
           </div>
-        </div>
+       
       </section><!-- End Contact Section -->
   </main><!-- End #main -->
 
@@ -308,9 +317,7 @@
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script> AOS.init(); </script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
