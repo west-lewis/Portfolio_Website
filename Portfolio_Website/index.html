@@ -31,9 +31,9 @@
     
     <div class="header">
       <div class="grinder">
-      <div class="circle">
-        <img class="bannerRotate" src="../Portfolio_Website/assets/img/Banner.svg">
-      </div>
+        <div class="circle">
+          <img class="bannerRotate" src="../Portfolio_Website/assets/img/Banner.svg">
+        </div>
         <div class="topNav">
           <div class="topNav2">
             <div class="topNav3">
@@ -47,7 +47,7 @@
               <nav id="nav">
                 <ul>
       
-                  <li class="menuItem">
+                  <li class="menuItem">s
       
                     <a href="#hero">ABOUT</a>
       
@@ -85,14 +85,12 @@
             </div>
           </div>
         </div>
-        </div>
-      
       </div>
     </div>
-    </div>
+   
   </header><!-- End Header -->
 
-
+ 
 
   <main id="main">
 
@@ -121,25 +119,34 @@
     <!-- ======= featured ======= -->
   <section id="featured">
     <div class="flex-container-featured">
-      <div class="card-featured">
-        <h1 class="innerShade" title="FEATURED">FEATURED</h1>
-        <div class="carousel">
-          <div class="Citem">
-            <img src="assets/img/PAWSCAR.png"  alt="paws">
-          </div>
-          <div class="Citem">
-            <img src="assets/img/FCCCAR.png"  alt="fcc">
-          </div>
-          <div class="Citem">
-            <img src="assets/img/BnRCAR.png"  alt="barksnrec">
+
+      <h1 class="innerShade" title="FEATURED">FEATURED</h1>
+
+        <div class="scene">
+
+          <div class="carousel">
+    
+            <div class="carousel__cell">
+              <img src="assets/img/PAWSCAR.png"  alt="paws">
+            </div>
+
+            <div class="carousel__cell">
+              <img src="assets/img/FCCCAR.png"  alt="fcc">
+            </div>
+
+            <div class="carousel__cell">
+              <img src="assets/img/BnRCAR.png"  alt="barksnrec">
+            </div>
+
           </div>
 
         </div>
-        <div class="prev next">
-          <input type="radio" name="position">
-          <input type="radio" name="position" checked/>
-          <input type="radio" name="position" />
-        </div>
+
+      <div class="card-featured">
+
+        <button class="previous-button">Previous</button>
+        <button class="next-button">Next</button>
+
       </div>
     </div>
   </section><!-- End About Section -->
@@ -201,12 +208,12 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>CONTACT ME!</h2>
-          <p id="two">Let's get connected and see what we can make.</p>
+          <h1>CONTACT ME!</h1>
+          <p id="two">COLLABORATE AND CREATE</p>
         </div>
 
-        <div>
-          <iframe style="border:0; width: 100%; height: 430px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.167511198083!2d-121.49444868426697!3d38.575990173429474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec9797ac334295a4!2zMzjCsDM0JzMzLjYiTiAxMjHCsDI5JzMyLjEiVw!5e0!3m2!1sen!2sus!4v1667446787107!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.167511198083!2d-121.49444868426697!3d38.575990173429474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec9797ac334295a4!2zMzjCsDM0JzMzLjYiTiAxMjHCsDI5JzMyLjEiVw!5e0!3m2!1sen!2sus!4v1667446787107!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
         </div>
 
 
@@ -238,28 +245,27 @@
           </div>
         </div>
         <div>
-          <div class="row">
-            <div class="">
-              <div class="info row">
-                <div class="location">
-                  <i class="bi bi-geo-alt"></i>
-                  <h4>Location:</h4>
+          <div class="flex-container-contact">
+            
+
+                <div class="flex-container-contact icon">
+                  <i class="bi"></i>
+                  <h4>LOCATION</h4>
                   <p id="one">Sacramento, CA 95831</p>
                 </div>
     
-                <div class="email">
-                  <i class="bi bi-envelope"></i>
-                  <h4>Email:</h4>
+                <div class="flex-container-contact icon">
+                  <i class="bi"></i>
+                  <h4>EMAIL</h4>
                   <p id="one">westselewis@gmail.com</p>
                 </div>
     
-                <div class="phone">
-                  <i class="bi bi-phone"></i>
-                  <h4>Call:</h4>
+                <div class="flex-container-contact icon">
+                  <i class="bi"></i>
+                  <h4>CALL</h4>
                   <p id="one">+1 650 228 8852</p>
                 </div>                
-              </div>
-            </div>
+             
           </div>
         </div>
       </section><!-- End Contact Section -->
@@ -269,7 +275,7 @@
   <footer id="footer">
     <div class="footer-top">
       <div class="flex-container-footer">
-        <div class="card">
+        <div class="card-footer-link">
           <img src="assets/img/Menu_Icon.png"  alt="Logo">
         </div>
         <div class="card-footer-link"> 
