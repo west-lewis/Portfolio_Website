@@ -7,21 +7,22 @@
 
 
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
 
-
+ <!--Style-->
 
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
+
+
+  <!-- ======= Body ======= -->
+
 
 <body>
 
@@ -31,7 +32,7 @@
     <div class="header">
       <div class="grinder">
       <div class="circle">
-        <img class="bannerRotate" src="../Portfolio_Website/assets/img/Banner.svg" width="120%" height="120%">
+        <img class="bannerRotate" src="../Portfolio_Website/assets/img/Banner.svg">
       </div>
         <div class="topNav">
           <div class="topNav2">
@@ -108,7 +109,7 @@
            Crafting accessible and intuitive experiences for users is my goal when building out designs. Combining a personal passion for heuristics, practiced strengths in modern user experience and interface design, and a multifaceted work history, I am a valuable contributor to any collaborative effort.
          </p>
         </div>
-        <div data-aos="fade-up" data-aos-duration="3000" class="aos-init aos-animate card-hero">
+        <div data-aos="fade-up" data-aos-duration="3000" class="card-hero">
           <img src="assets/img/Hero_Image.png" alt="DarnHandsome">
        
         </div>
@@ -210,7 +211,7 @@
 
 
         <div>
-          <div class="flex-container-column">
+          <div class="flex-container-contact">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="flex-container-column">
@@ -300,7 +301,10 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>

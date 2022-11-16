@@ -1,9 +1,4 @@
-/**
-* Template Name: OnePage - v4.9.1
-* Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -200,33 +195,30 @@
     }
   });
 
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
+  AOS.init();
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+  // You can also pass an optional settings object
+  // below listed default settings
+  AOS.init({
+    // Global settings:
+    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+    initClassName: 'aos-init', // class applied after initialization
+    animatedClassName: 'aos-animate', // class applied on animation
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    
 
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 400, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
   });
 
@@ -271,36 +263,37 @@
    */
   new PureCounter();
 
-})()
 
 
 
-// Setting up the Variables
-var menutoggle = document.getElementById("nav-action");
-var nav = document.getElementById("nav");
+
+  // Setting up the Variables
+  var menutoggle = document.getElementById("nav-action");
+  var nav = document.getElementById("nav");
 
 
-//setting up the listener
-menutoggle.addEventListener("click", menutoggleClicked, false);
+  //setting up the listener
+  menutoggle.addEventListener("click", menutoggleClicked, false);
 
 
-//setting up the clicked Effect
-function menutoggleClicked() {
-  menutoggle.classList.toggle('active');
-  nav.classList.toggle('visible');
-}
-
-const outsideClickListener = event => {
-  const deltaX = event.offsetX - lastMouseDownX;
-  const deltaY = event.offsetY - lastMouseDownY;
-  const distSq = (deltaX * deltaX) + (deltaY * deltaY);
-  const isDrag = distSq > 3;
-  const isDragException = isDrag && !lastMouseDownWasOutside;
-
-  if (event.target.closest(selector) === null) { // or use: event.target.closest(selector) === null
-    element.style.display = 'none';
-    removeClickListener();
-    
+  //setting up the clicked Effect
+  function menutoggleClicked() {
+    menutoggle.classList.toggle('active');
+    nav.classList.toggle('visible');
   }
-}
 
+  const outsideClickListener = event => {
+    const deltaX = event.offsetX - lastMouseDownX;
+    const deltaY = event.offsetY - lastMouseDownY;
+    const distSq = (deltaX * deltaX) + (deltaY * deltaY);
+    const isDrag = distSq > 3;
+    const isDragException = isDrag && !lastMouseDownWasOutside;
+
+    if (event.target.closest(selector) === null) { // or use: event.target.closest(selector) === null
+      element.style.display = '';
+      removeClickListener();
+      
+    }
+  }
+
+})()
