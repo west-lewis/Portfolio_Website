@@ -12,12 +12,11 @@ html {
   align-content: center;
   clip-path: inherit;
   overflow-x: hidden;
+  z-index: 1;
 
 }
 
-main{
-  width: 100%;
-}
+
 
 
 body {
@@ -53,12 +52,14 @@ h2 {
 
 h3,
 h4 {
-  font: bold 1.5rem "Futura Bk", sans-serif;
+  font: bold 2.5rem "Futura Bk", sans-serif;
   text-align: center;
   margin: 0%;
   padding: 0%;
   width: 100%;
   height: 100%;
+  color: #ffffff;
+  letter-spacing: .4rem;
  
 
 }
@@ -78,9 +79,11 @@ p {
 }
 
 .bi {
-  width: 4rem;
-  height: 4rem;
-  background:#ff4d4d
+
+  width: 8rem;
+  height: 8rem;
+  padding: 5%;
+  filter: drop-shadow(0rem 0rem 3rem #8d8665);
 }
 
 
@@ -89,16 +92,11 @@ p {
 input[type=email],
 input[type=name],
 input[type=text]{
+  width: 100%;
+  height: 100%;
   background-color: #083D77;
-  width: 130px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: white;
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
   transition: width 0.4s ease-in-out;
 }
 
@@ -106,16 +104,12 @@ input[type=text]:focus {
   width: 100%;
 }
 
-
-
-
-
 #one{
   font-size: 1.5rem;
   text-align: center;
   font-family: "Futura Bk BT", sans-serif;
-  color: #000;
-
+  color: rgb(255, 255, 255);
+  letter-spacing: .2rem;
 }
 
 #two{
@@ -172,7 +166,7 @@ input[type=text]:focus {
   align-content: center;
   flex-direction: column;
   background-size: cover;
-  box-shadow: 0px 0px 5rem 15 -1rem rgb(0, 0, 0);
+  box-shadow: 0rem 0rem 152rem -1rem rgb(0, 0, 0);
  
 }
 
@@ -192,15 +186,8 @@ input[type=text]:focus {
   flex-direction: column;
 }
 
-.flex-container-contact .icon{
-  padding: 5%;
 
-}
 
-.flex-container-contact i{
-  padding: 1%;
-
-}
 
 
 
@@ -225,13 +212,16 @@ input[type=text]:focus {
 @media only screen and (min-width: 768px) {
   .flex-container-footer{
     flex-direction: row;
+    justify-content: space-evenly;
+
   }
 }
 
 @media only screen and (min-width: 1920px) {
 
   .flex-container-footer{
-    flex-direction: row
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 
@@ -259,7 +249,7 @@ input[type=text]:focus {
   padding: 1%;
   margin:0%;
   width: 100%;
-  height: auto;
+  height: 100%;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -280,15 +270,14 @@ input[type=text]:focus {
   justify-items: center;
   align-items: center;
   align-content: center;
-  z-index: 5;
+  z-index: 1;
    
 }
 
 .card-hero img{
   width: 160%;
-  filter: drop-shadow( 0rem 0rem 5rem rgb(255, 255, 255));
-  z-index: 5;
-   
+  filter: drop-shadow( 0rem 0rem 3rem #ffffff);
+  position: relative;
 }
  
 
@@ -307,6 +296,7 @@ input[type=text]:focus {
 .card-footer-link img{
   width: 50%;
   height: 50%;
+ filter: drop-shadow(0rem 0rem .4rem rgb(255, 255, 255));
 
 }
 
@@ -342,9 +332,14 @@ input[type=text]:focus {
   right: 2.5%;
   bottom: 2%;
   z-index: 999;
-  width: 7rem;
-  height: 7rem;
-  transition: all 5s;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: #746132;
+  border-style: solid;
+  border-width: .5rem;
+  background: #010b16;
+  transition: all 1s;
   opacity: 1;
   filter: drop-shadow( 0 0 .5rem rgb(0, 0, 0));
   
@@ -368,7 +363,6 @@ input[type=text]:focus {
   right: 0;
   bottom: 0;
   z-index: 9999;
-
   background: #fff;
 }
 
@@ -435,7 +429,6 @@ input[type=text]:focus {
   height: 10rem;
   padding: 0%;
   margin: 0%;
-  z-index: 5;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -472,7 +465,9 @@ input[type=text]:focus {
   width: 100%;
   background: #FFF7E1;
   border: none;
-  z-index: 4;
+  z-index: 500;
+  box-shadow: 0rem 0rem 5rem #000;
+  position: relative;
 }
 
 #resume p {
@@ -480,12 +475,14 @@ input[type=text]:focus {
 }
 
 .resume {
-  border: none;
+
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
+
+  
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -549,7 +546,7 @@ nav {
   box-shadow: 0rem 0rem 2rem #ffffff;
   margin: 0%;
   padding: 0%;
-  z-index: 1;
+  z-index: 999;
  
 }
 
@@ -635,6 +632,7 @@ a {
   height: auto;
   transition: 0.2s;
   color: #FFF7E1;
+  text-decoration: none;
   font: bold 1.4rem "Futura Bk BT", sans-serif;
   transition: all 1s ease-in-out;
 }
@@ -683,7 +681,7 @@ img.bannerRotate{
   justify-items: center;
   align-items: center;
   align-content: center;
-  z-index: 997;
+  z-index: 999;
   width: 70%;
   height: auto;
   cursor: pointer;
@@ -710,7 +708,6 @@ img.bannerRotate{
   align-content: center;
   margin: 0%;
   padding: 0%;
-  z-index: 0;
   -webkit-user-select: none; 
   -ms-user-select: none; 
   user-select: none;
@@ -784,7 +781,7 @@ img.bannerRotate{
 }
 
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (min-width: 1920px) {
 
 /* menu toggle desktop*/
 
@@ -869,6 +866,7 @@ img.bannerRotate{
   height: auto;
   background-size: cover;
   background-color: #083D77;
+  z-index: 1;
 }
 
 #hero h1 {
@@ -889,22 +887,24 @@ img.bannerRotate{
 }
 
 #featured {
-  border: none;
+  
   background-color: #211C0E;
   width: 100%;
   height: 100vh;
   background-size: cover;
-  box-shadow: 0px 0px 5rem 15px rgb(0, 0, 0);
+  box-shadow: 0rem 0rem 3rem rgb(0, 0, 0);
+  z-index: 666;
+  position: relative;
 
 }
 
 #featured h1 {
-  color: #000000;
-  font: bold 4rem "Futura Bk BT", sans-serif;
-  letter-spacing: .1rem;
-  z-index: 7;
+  color: #ffffff;
+  font: bold 3.5rem "Futura Bk BT", sans-serif;
+  letter-spacing: .7rem;
+  padding-top: 1rem;
   width: 100%;
-  height: 25%;
+  height: 100%;
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -918,7 +918,7 @@ img.bannerRotate{
 
 h1.innerShade:before, 
 h1.innerShade:after {
-  content:attr("FEATURED");
+  content:attr();
   color: rgba(238, 173, 173, 0.733);
   display: block;
  
@@ -973,7 +973,7 @@ h1.innerShade:after {
 #contact{
   width: 100%;
   border: none;
-  background: #FFF7E1;
+  background: #083D77;
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -988,10 +988,14 @@ h1.innerShade:after {
 }
 
 .map{
+  z-index: 444;
   width: 100%;
   height: 35rem;
   padding: 0%;
+  padding-top: 15%;
+  padding-bottom: 15%;
   margin: 0%;
+
 }
 
 .map iframe{
@@ -999,55 +1003,7 @@ h1.innerShade:after {
   height: 100%;
   padding: 0%;
   margin: 0%;
-}
-
-
-
-.info {
-  width: 100%;
-}
-
-.info i {
-  font-size: 20px;
-  color: #2487ce;
-  float: left;
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.info h4 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #124265;
-}
-
-.info p {
-  padding: 0%;
-  margin-bottom: 0;
-  font-size: 14px;
-  color: #217bbc;
-}
-
-
-.info .email,
-.info .location,
-.info .phone {
-  padding: 0%;
-}
-
-.info .email:hover i,
-.info .location:hover i,
-.info .phone:hover i {
-  background: #2487ce;
-  color: #fff;
+  box-shadow: 0rem 0rem 2rem rgb(0, 0, 0);
 }
 
 .php-email-form {
@@ -1062,8 +1018,6 @@ h1.innerShade:after {
 
 }
 
-
-
 .form-group {
   padding: 0%;
   width: 80%;
@@ -1076,19 +1030,21 @@ h1.innerShade:after {
   align-content: center;
   flex-direction: column;
   
-
 }
 
 .form-group input.form-control {
   padding: 0%;
   width: 100%;
-  height: auto;
+  height: 3rem;
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  border: none;
+  border-style: solid;
+  border-radius: .5rem;
+  border-width: .4rem;
+  border-color: #746132;
 
 }
 
@@ -1223,7 +1179,7 @@ textarea {
 
 #footer .footer-top {
   background: #211C0E;
-  box-shadow: 0rem 0rem 2rem -1px rgb(0, 0, 0);
+  box-shadow: 0rem 0rem 2rem #000000;
   font-size: 1.5rem;
   margin-bottom: 0%;
   font-family: "Futura Bk BT", sans-serif;
@@ -1304,25 +1260,25 @@ textarea {
 
 /* carousel */ 
 
-.Cimage {
-  height: auto;
-  width: 100%;
+.scene {
   padding: 0%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 0%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  grid-template-rows: 1fr 3vh 1fr;
-  grid-template-columns: 1fr 3fr 1fr;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-
+  z-index: 899;
 }
 
 .carousel {
   width: 100%;
-  height: 50%;
+  height: 100%;
   position: absolute;
-  transform: translateZ(-20rem);
   transform-style: preserve-3d;
   transition: transform 1s;
   display:flex;
@@ -1339,36 +1295,19 @@ textarea {
   cursor: pointer;
   width: 100%;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 20%;
   color: rgb(17, 0, 167);
   transition: 0.6s ease;
   display: flex;
+  background: none;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
   flex-direction: row;
-  height: 2rem;
   
+  z-index: 999;
 }
-
-
-
-.scene {
-  padding: 0%;
-  margin: 0%;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  perspective: 18rem;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  
-}
-
 
 
 .carousel__cell {
@@ -1381,6 +1320,12 @@ textarea {
   align-items: center;
   align-content: center;
   flex-direction: column;
+  transition: transform 1s, opacity 1s;
+
+}
+
+.carousel__cell p {
+color: #fff;
 
 }
 
@@ -1390,29 +1335,66 @@ textarea {
   height: auto;
   max-width: 1920px;
   max-height: 1080px;
+  box-shadow: 0rem 0rem 30rem  rgb(0, 0, 0);
+
 }
 
 
 
-.carousel__cell:nth-child(9n+1) { 
-  background: transparent;  }
+  .carousel__cell:nth-child(3n+1) { 
+    background: transparent;  }
+    
+  .carousel__cell:nth-child(3n+2) { 
+    background: transparent;  }
+
+  .carousel__cell:nth-child(3n+3) { 
+    background: transparent; }
+
+  .carousel__cell:nth-child(1) {
+      transform: rotateY( 0deg) translateZ(20rem); 
+    }
+      
+  .carousel__cell:nth-child(2) {
+      transform: rotateY( 120deg) translateZ(20rem);
+     }
+
   
-.carousel__cell:nth-child(9n+2) { 
-  background: transparent;  }
+  .carousel__cell:nth-child(3) {
+      transform: rotateY( 240deg) translateZ(20rem); 
+    }
+  
+  
 
-.carousel__cell:nth-child(9n+3) { 
-  background: transparent; }
 
-
+  @media only screen and (min-width: 1920px){
 
 .carousel__cell:nth-child(1) {
-   transform: rotateY( 0deg) translateZ(20rem); }
+   transform: rotateY( 0deg) translateZ(25rem); }
    
 .carousel__cell:nth-child(2) {
-   transform: rotateY( 120deg) translateZ(20rem); }
+   transform: rotateY( 120deg) translateZ(25rem); }
 
 .carousel__cell:nth-child(3) {
-   transform: rotateY( 240deg) translateZ(20rem); }
+   transform: rotateY( 240deg) translateZ(25rem); }
+
+
+
+
+  .carousel {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    perspective: 1000rem;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  
+  }
+}
 
 
 
