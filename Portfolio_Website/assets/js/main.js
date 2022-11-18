@@ -35,55 +35,7 @@
     el.addEventListener('scroll', listener)
   }
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
 
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
 
   /**
    * Back to top button
@@ -101,53 +53,35 @@
     onscroll(document, toggleBacktotop)
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+  const body = document.body;
+  
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
+  let lastScroll = 0; 
 
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      body.classList.remove(scrollUp);
+      return;
     }
-  }, true)
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
+  
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+      // down
+      body.classList.remove(scrollUp);
+      body.classList.add(scrollDown);
+      lottiePlayer.play();
+    } else if (
+      currentScroll < lastScroll &&
+      body.classList.contains(scrollDown)
+    ) {
+      // up
+      body.classList.remove(scrollDown);
+      body.classList.add(scrollUp);
     }
-  }, true)
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
+    lastScroll = currentScroll;
   });
+  
 
   /**
    * Preloader
@@ -160,34 +94,7 @@
   }
 
 
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
+  
 
   AOS.init();
 
@@ -216,29 +123,7 @@
 
   });
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+ 
 
   /**
    * Animation on scroll
@@ -252,10 +137,7 @@
     })
   });
 
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
+
 
 
 
@@ -264,6 +146,7 @@
   // Setting up the Variables
   var menutoggle = document.getElementById("nav-action");
   var nav = document.getElementById("nav");
+  
 
 
   //setting up the listener
@@ -276,19 +159,21 @@
     nav.classList.toggle('visible');
   }
 
-  const outsideClickListener = event => {
-    const deltaX = event.offsetX - lastMouseDownX;
-    const deltaY = event.offsetY - lastMouseDownY;
-    const distSq = (deltaX * deltaX) + (deltaY * deltaY);
-    const isDrag = distSq > 3;
-    const isDragException = isDrag && !lastMouseDownWasOutside;
-
-    if (event.target.closest(selector) === null) { // or use: event.target.closest(selector) === null
-      element.style.display = '';
-      removeClickListener();
-      
+  document.addEventListener("click", (e) => {
+    // Check if the filter list parent element exist
+    const isClosest = e.target.closest(menutoggleClicked);
+  
+    // If `isClosest` equals falsy & popup has the class `show`
+    // then hide the popup
+    if (!isClosest && menutoggle.classList.toggle("active")) {
+      menutoggle.classList.toggle("active");
     }
-  }
+  });
+
+  
+
+
+
 
   var carousel = document.querySelector('.carousel');
   var cells = carousel.querySelectorAll('.carousel__cell');
@@ -341,6 +226,7 @@
     }
   
     rotateCarousel();
+    
   }
   
   var orientationRadios = document.querySelectorAll('input[name="orientation"]');
@@ -360,5 +246,5 @@
   
   // set initials
   onOrientationChange();
-  
+
 })()

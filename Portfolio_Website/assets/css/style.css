@@ -1,9 +1,9 @@
 
 
 html {
-  height: auto;
+  height: max-content;
   width: 100%;
-  padding: 0;
+  scroll-behavior: smooth;
   margin: 0;
   display: flex;  
   justify-content: center;
@@ -17,6 +17,9 @@ html {
 }
 
 
+main{
+  width: 100%;
+}
 
 
 body {
@@ -40,7 +43,7 @@ body {
 h1,
 h2 {
   font-size: 4rem;
-  font-family: "Futura Bk", sans-serif;
+  font-family: "Futura Bk Bt", sans-serif;
   text-align: center;
   color: #000;
   margin: 0%;
@@ -52,20 +55,19 @@ h2 {
 
 h3,
 h4 {
-  font: bold 2.5rem "Futura Bk", sans-serif;
+  font: bold 2.5rem "Futura Bk Bt", sans-serif;
   text-align: center;
   margin: 0%;
   padding: 0%;
   width: 100%;
-  height: 100%;
   color: #ffffff;
-  letter-spacing: .4rem;
  
 
 }
 
 p {
-  border: none;
+  width: 100%;
+  height: 100%;
   font: bold 1.5rem "Futura Bk BT", sans-serif;
   color: #000000;
   margin: 0;
@@ -79,14 +81,27 @@ p {
 }
 
 .bi {
-
-  width: 8rem;
-  height: 8rem;
-  padding: 5%;
+  
+  height: 33%;
+  padding: 0%;
   filter: drop-shadow(0rem 0rem 3rem #8d8665);
 }
 
+.bi img{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
 
+button[type='']{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
 
 
 input[type=email],
@@ -105,7 +120,8 @@ input[type=text]:focus {
 }
 
 #one{
-  font-size: 1.5rem;
+  
+  font-size: 1rem;
   text-align: center;
   font-family: "Futura Bk BT", sans-serif;
   color: rgb(255, 255, 255);
@@ -131,24 +147,26 @@ input[type=text]:focus {
   height: 50%;
 }
 
-.flex{
+.flex {
   display: flex;
   justify-content: center;
+  justify-items: center;
   align-items: center;
-  opacity: 1;
+  align-content: center;
+
 }
 
 .flex-container-hero{
 
   height: 100%;
- 
+  width: auto;
   margin: 0%;
   padding: 5%;
-  padding-left: 4%;
-  padding-right: 4%;
-  align-content: center;
   display: flex;
   justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
   flex-direction: column;
 }
 
@@ -176,8 +194,10 @@ input[type=text]:focus {
   width: 100%;
   margin: 0%;
   padding: 0%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  object-fit: cover;
+  
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -186,6 +206,44 @@ input[type=text]:focus {
   flex-direction: column;
 }
 
+
+
+.flex-container-contact .bi img{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.flex-container-contact-cell{
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  object-fit: cover;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.flex-container-contact-cell img{
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  
+  width: 32rem;
+  height: 32rem;
+}
 
 
 
@@ -262,7 +320,7 @@ input[type=text]:focus {
 .card-hero{
   display: flex;
   flex-direction: column;
-  padding: 1%;
+  padding: 5%;
   margin:0%;
   width: 100%;
   height: auto;
@@ -309,6 +367,21 @@ input[type=text]:focus {
   align-items: center;
   align-content: center;
 }
+
+.card-contact-info{
+  width: 50%;
+  height: 50%;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+
 
 
 
@@ -415,14 +488,17 @@ input[type=text]:focus {
   padding: 0%;
   margin: 0%;
   z-index: 999;
-
+  
 
 }
 
 
 
-.header {
 
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   transition: all 1s;
   width: 100%;
@@ -433,7 +509,10 @@ input[type=text]:focus {
   justify-items: center;
   align-items: center;
   align-content: center;
+  position: fixed;
 }
+
+
 
 .grinder {
 
@@ -448,6 +527,9 @@ input[type=text]:focus {
   height: 10rem;
   width: 100%;
   padding: 0%;
+
+  transition: transform .4s;
+  
   margin: 0;
   border-style: solid;
   border-width: .7rem;
@@ -457,7 +539,15 @@ input[type=text]:focus {
   background-color: #000811;
   border-color: #3f3212;
   box-shadow: 0rem 1px 3rem #000;
-  position: fixed;
+
+}
+
+.scroll-up .grinder{
+  transform: none;
+}
+
+.scroll-down .grinder{
+  transform: translate3d(0, -100%, 0);
 }
 
 #resume {
@@ -471,6 +561,7 @@ input[type=text]:focus {
 }
 
 #resume p {
+  
   color: #000;
 }
 
@@ -615,9 +706,12 @@ li {
 }
 
 img {
+  position: static;
   display: flex;
   justify-content: center;
+  justify-items: center;
   align-items: center;
+  align-content: center;
   width: 100%;
   height: 100%;
 
@@ -652,12 +746,11 @@ grid-column: 1 / 1;
   display: flex;
   justify-items: center;
   align-items: center;
-  z-index: -1;
-
- 
-
+  z-index: 1;
 
 }
+
+
 
 img.bannerRotate{
   width: 21rem;
@@ -870,18 +963,20 @@ img.bannerRotate{
 }
 
 #hero h1 {
-  font: 5rem "Futura Bk BT", sans-serif;
+  font: bold 5rem "Futura Bk BT", sans-serif;
 
 }
 
 #hero h1.spill{
-  font: bold 5rem "Futura Bk BT", sans-serif;
-  padding-top: 20%;
-  padding-bottom: 5%;
+
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 
 }
 
 #hero h3.spill{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   font: bold 6rem "Futura Bk BT", sans-serif;
 
 }
@@ -900,8 +995,10 @@ img.bannerRotate{
 
 #featured h1 {
   color: #ffffff;
-  font: bold 3.5rem "Futura Bk BT", sans-serif;
+  text-align: center;
+  font: bold 3.5rem "Futura Bk Bt", sans-serif;
   letter-spacing: .7rem;
+  margin-right: -.7rem;
   padding-top: 1rem;
   width: 100%;
   height: 100%;
@@ -910,7 +1007,7 @@ img.bannerRotate{
   justify-items: center;
   align-items: center;
   align-content: center;
-  
+  z-index: 950;
   }
   
 
@@ -958,8 +1055,8 @@ h1.innerShade:after {
 
 .section-title {
   text-align: center;
-  padding-bottom: 5%;
-  padding-top: 5%;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 
@@ -972,6 +1069,7 @@ h1.innerShade:after {
 --------------------------------------------------------------*/
 #contact{
   width: 100%;
+  height: 100%;
   border: none;
   background: #083D77;
   display: flex;
@@ -981,13 +1079,47 @@ h1.innerShade:after {
   align-content: center;
 }
 
-#contact h1{
-  font: normal bold 4rem "Futura Bk BT", sans-serif;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+#contact h1 {
+  
+  font: normal 4rem "Futura Bk BT", sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.map{
+#contact h2 {
+  
+  font: normal 3rem "Futura Bk BT", sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#contact h3 {
+  font: normal 3rem "Futura Bk BT", sans-serif;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+}
+
+#contact p{
+  height: 33%;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  font: normal 2rem "Futura Bk BT", sans-serif;
+
+}
+
+.map {
   z-index: 444;
   width: 100%;
   height: 35rem;
@@ -998,7 +1130,7 @@ h1.innerShade:after {
 
 }
 
-.map iframe{
+.map iframe {
   width: 100%;
   height: 100%;
   padding: 0%;
@@ -1289,23 +1421,33 @@ textarea {
 
 }
 
+.previous-button img, 
+.next-button img{
+  width: 4rem;
+  height: auto;
+}
+
+.previous-button img{
+  transform: rotateY(180deg);
+}
+
 .previous-button, 
 .next-button {
 
   cursor: pointer;
   width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 20%;
-  color: rgb(17, 0, 167);
+  height: auto;
+  padding: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   transition: 0.6s ease;
   display: flex;
+  border: none;
   background: none;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  flex-direction: row;
-  
   z-index: 999;
 }
 
