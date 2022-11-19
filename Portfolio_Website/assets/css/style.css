@@ -19,11 +19,14 @@ html {
 
 main{
   width: 100%;
+  height: auto;
 }
 
 
 body {
-
+  background-image: url("../img/Route_Mobile.png") repeat 0 0;
+  background-size: cover;
+  background-color: #03203f;
   margin: 0%;
   padding: 0%;
   width: auto;
@@ -32,7 +35,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #03203f;
   font-size: 1rem;
   clip-path: inherit;
   overflow-x: hidden;
@@ -1599,6 +1601,26 @@ color: #fff;
 
 @media only screen and (min-width: 1920px) {
 
+
+body{
+  background-image: url("../img/Route_Desktop.png");
+
+}
+
+.form-group {
+  padding: 0%;
+  width: 80%;
+  padding-top: 1rem;
+  padding-bottom: 1rem ;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  
+}
+
   .previous-button, 
 .next-button {
 
@@ -1663,6 +1685,13 @@ color: #fff;
   .menuToggle.active  ~ #nav.visible ul li.menuItem a {
     
     pointer-events:auto;
+  }
+
+  .form-group {
+  
+    width: 30%;
+
+    
   }
 
 }
