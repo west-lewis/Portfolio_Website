@@ -29,7 +29,7 @@
   <!-- ======= Header ======= -->
   <header id="header">
     
-    <div class="header">
+    <div class="header" id="respond">
       <div class="grinder">
         <div class="circle">
           <img class="bannerRotate" src="../Portfolio_Website/assets/img/Banner.svg">
@@ -93,7 +93,14 @@
  
 
   <main id="main">
-    
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+      </div>
+  
+    </div>
     <section id="hero">
                 
       <div class="flex-container-hero">
@@ -113,7 +120,8 @@
   </section><!-- End Hero -->
 
     <!-- ======= featured ======= -->
-  <section id="featured">
+  <section id="featured">            
+
     <div class="flex-container-featured">
       <h1 title="FEATURED"> FEATURED</h1>
       <div class="card-featured">
@@ -123,21 +131,35 @@
 
           <div class="carousel">
     
-            <div class="carousel__cell">
+            <div class="carouselCell">
+              
+              <div  id="modalButton">
               <img src="assets/img/PAWSCAR.png"  alt="paws">
+              </div>
+
               <p>Non-Profit Website Redesign</p>
+
+
             </div>
 
-            <div class="carousel__cell">
+            <div class="carouselCell">
               <img src="assets/img/FCCCAR.png"  alt="fcc">
               <p>Government Website Redesign</p>
             </div>
 
-            <div class="carousel__cell">
+            <div class="carouselCell">
               <img src="assets/img/BnRCAR.png"  alt="barksnrec">
               <p>App Design Challenge</p>
             </div>
 
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+              </div>
+
+            </div>
           </div>
 
         </div>

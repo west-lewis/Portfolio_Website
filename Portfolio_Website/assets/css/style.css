@@ -29,7 +29,6 @@ body {
   background-image: url(../img/Route_Mobile.svg);
   background-color: #083d77;
   background-repeat: no-repeat;
-  background-size: max-content;
   width: 100%;
   height: auto;
   margin: 0%;
@@ -148,6 +147,7 @@ input[type=text]:focus {
 
 
 .flex {
+  z-index: 466;
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -320,8 +320,8 @@ input[type=text]:focus {
 .card-hero{
   display: flex;
   flex-direction: column;
-  padding: 3rem;
-  margin:0%;
+  padding: 0%;
+  margin: 0%;
   width: 100%;
   height: auto;
   justify-content: center;
@@ -507,7 +507,7 @@ input[type=text]:focus {
   height: 10rem;
   padding: 0%;
   margin: 0%;
-  justify-content: center;
+  justify-content: right;
   justify-items: center;
   align-items: center;
   align-content: center;
@@ -605,12 +605,7 @@ nav {
   user-select: none; 
 }
 
-#spacer{
-  height: 4rem;
 
-  padding: 0%;
-  margin: 0%;
-}
 
 .circle,
 .topNav{
@@ -956,7 +951,7 @@ img.bannerRotate{
 #hero h3.spill{
   padding-top: 4rem;
   padding-bottom: 4rem;
-  font: bold 5.5rem "Futura Bk BT", sans-serif;
+  font: bold 5rem "Futura Bk BT", sans-serif;
 
 }
 
@@ -1104,8 +1099,8 @@ h1.innerShade:after {
   width: 100%;
   height: 35rem;
   padding: 0%;
-  padding-top: 15%;
-  padding-bottom: 15%;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   margin: 0%;
 
 }
@@ -1351,10 +1346,11 @@ textarea {
 }
 
 #footer .social-links{
-  padding:5%;
+  padding:1rem;
 }
 
 #footer .social-links a {
+
   font: normal bold 1rem "Futura Bk BT", sans-serif;
   text-decoration: none;
   display: flex;
@@ -1368,7 +1364,6 @@ textarea {
   width: 4rem;
   height: 4rem;
   transition: 0.3s;
-  
   
 }
 
@@ -1440,8 +1435,50 @@ textarea {
   z-index: 999;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-.carousel__cell {
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 90%;
+  height: 90%;
+
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 10001;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.carouselCell {
   position: absolute;
   width: 100%;
   height: auto;
@@ -1455,12 +1492,12 @@ textarea {
 
 }
 
-.carousel__cell p {
+.carouselCell p {
 color: #fff;
 
 }
 
-.carousel__cell img{
+.carouselCell img{
 
   width: 100%;
   height: auto;
@@ -1472,60 +1509,32 @@ color: #fff;
 
 
 
-  .carousel__cell:nth-child(3n+1) { 
+  .carouselCell:nth-child(3n+1) { 
     background: transparent;  }
     
-  .carousel__cell:nth-child(3n+2) { 
+  .carouselCell:nth-child(3n+2) { 
     background: transparent;  }
 
-  .carousel__cell:nth-child(3n+3) { 
+  .carouselCell:nth-child(3n+3) { 
     background: transparent; }
 
-  .carousel__cell:nth-child(1) {
+  .carouselCell:nth-child(1) {
       transform: rotateY( 0deg) translateZ(20rem); 
     }
       
-  .carousel__cell:nth-child(2) {
+  .carouselCell:nth-child(2) {
       transform: rotateY( 120deg) translateZ(20rem);
      }
 
   
-  .carousel__cell:nth-child(3) {
+  .carouselCell:nth-child(3) {
       transform: rotateY( 240deg) translateZ(20rem); 
     }
   
   
 
 
-  @media only screen and (min-width: 1920px){
 
-.carousel__cell:nth-child(1) {
-   transform: rotateY( 0deg) translateZ(25rem); }
-   
-.carousel__cell:nth-child(2) {
-   transform: rotateY( 120deg) translateZ(25rem); }
-
-.carousel__cell:nth-child(3) {
-   transform: rotateY( 240deg) translateZ(25rem); }
-
-
-
-
-  .carousel {
-
-      width: 40%;
-      /* height: 100%; */
-      position: absolute;
-      transform-style: preserve-3d;
-      transition: transform 1s;
-      display: flex;
-      justify-content: center;
-      justify-items: center;
-      align-items: center;
-      align-content: center;
-  
-  }
-}
 
 
 
@@ -1644,13 +1653,39 @@ color: #fff;
 
 
 
-    .carousel__cell:nth-child(1) {
+
+
+
+
+  .grinder.responsive{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+  .circle.responsive,
+.topNav.responsive{
+  grid-column: 3 / 3;
+  grid-row: 1 / 1;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+
+
+
+    .carouselCell:nth-child(1) {
        transform: rotateY( 0deg) translateZ(25rem); }
        
-    .carousel__cell:nth-child(2) {
+    .carouselCell:nth-child(2) {
        transform: rotateY( 120deg) translateZ(25rem); }
     
-    .carousel__cell:nth-child(3) {
+    .carouselCell:nth-child(3) {
        transform: rotateY( 240deg) translateZ(25rem); }
     
     
@@ -1675,7 +1710,7 @@ color: #fff;
 
 body{
   background-image: url("../img/Route_Desktop.svg");
-  background-size: max-content;
+ 
 
 }
 

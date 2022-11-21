@@ -140,7 +140,14 @@
 
 
 
-
+  function menutoggleClicked() {
+    var x = document.getElementById("respond");
+    if (x.className === "header") {
+      x.className += " responsive";
+    } else {
+      x.className = "header";
+    }
+  }
 
 
   // Setting up the Variables
@@ -159,33 +166,45 @@
     nav.classList.toggle('visible');
   }
 
-  document.addEventListener("click", (e) => {
-    // Check if the filter list parent element exist
-    const isClosest = e.target.closest(menutoggleClicked);
+
+
+
+
+
+    // Get the <span> element that closes the modal
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    var modalToggle = document.getElementById("modalButton");
+    modalToggle.addEventListener("click", modalButtonClicked , false);
+
+    function modalButtonClicked(event) {
+        modal.style.display = "block";
+      }
+
   
-    // If `isClosest` equals falsy & popup has the class `show`
-    // then hide the popup
-    if (!isClosest && menutoggle.classList.toggle("active")) {
-      menutoggle.classList.toggle("active");
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
     }
-  });
-
   
-
-
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+ 
 
 
   var carousel = document.querySelector('.carousel');
-  var cells = carousel.querySelectorAll('.carousel__cell');
+  var cells = carousel.querySelectorAll('.carouselCell');
   var selectedIndex = 0;
   var cellWidth = carousel.offsetWidth;
   var cellHeight = carousel.offsetHeight;
   var isHorizontal = true;
   var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
   var radius, theta;
-  // console.log( cellWidth, cellHeight );
-
-    var carousel = document.querySelector('.carousel');
   var cellCount = 3;
   var selectedIndex = 0;
 
