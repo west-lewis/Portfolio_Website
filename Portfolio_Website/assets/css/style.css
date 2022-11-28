@@ -388,9 +388,15 @@ input[type=text]:focus {
 
 
 .clipped-card {
-  -webkit-clip-path: url(/Portfolio_Website/assets/img/ResumeClip.svg);
-  clip-path: url(/Portfolio_Website/assets/img/ResumeClip.svg);
-  position: relative;
+
+  -webkit-mask-image: url(../img/ResumeClip.svg);
+  mask-image: url(../img/ResumeClip.svg);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  mask-position: relative;
+  mask
+
+
   box-shadow: 0rem 1rem 4rem #000;
 
 }
