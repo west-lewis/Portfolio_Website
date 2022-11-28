@@ -53,26 +53,31 @@ h2 {
   color: #000;
   margin: 0%;
   padding: 0%;
-  width: 100%;
-  height: 100%;
+  display: flex;  
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 
 }
 
 h3,
 h4 {
-  font: bold 2.5rem "Futura Bk Bt", sans-serif;
+  font: bold 2rem "Futura Bk Bt", sans-serif;
   text-align: center;
   margin: 0%;
   padding: 0%;
-  width: 100%;
   color: #ffffff;
- 
+  display: flex;  
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 
 }
 
 p {
-  width: 100%;
-  height: 100%;
+
   font: bold 1.5rem "Futura Bk BT", sans-serif;
   color: #000000;
   margin: 0;
@@ -86,10 +91,8 @@ p {
 }
 
 .bi {
-  
-  height: 33%;
-  padding: 0%;
-  filter: drop-shadow(0rem 0rem 3rem #8d8665);
+   height: 10rem;
+
 }
 
 .bi img{
@@ -384,6 +387,14 @@ input[type=text]:focus {
 }
 
 
+.clipped-card {
+  -webkit-clip-path: url(/Portfolio_Website/assets/img/ResumeClip.svg);
+  clip-path: url(/Portfolio_Website/assets/img/ResumeClip.svg);
+  position: relative;
+  box-shadow: 0rem 1rem 4rem #000;
+
+}
+
 
 
 
@@ -552,24 +563,57 @@ input[type=text]:focus {
   transform: translate3d(0, -100%, 0);
 }
 
+/* resume */
+
 #resume {
+  clip-path: url("../img/ResumeClip.svg");
   height: auto;
   width: 100%;
-  background: #FFF7E1;
-  border: none;
   z-index: 500;
   box-shadow: 0rem 0rem 5rem #000;
   position: relative;
 }
 
+#resume h1 {
+  padding: 6rem;
+  color: rgb(255, 255, 255);
+  font: bold 5rem "Futura Bk BT", sans-serif;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-decoration-line: underline;
+
+}
+
+#resume h2 {
+  padding: 3rem;
+  color: #000;
+  font: bold 3rem "Futura Bk BT", sans-serif;
+
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+
+}
+
 #resume p {
-  
+
+
   color: #000;
 }
 
 .resume {
 
+  background: #cfba7f;
+  height: auto;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -577,12 +621,89 @@ input[type=text]:focus {
 
   
 }
+
+.resumeItem {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.resumeItemList{
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  
+}
+
+.resumeItemIcon{
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  display: block;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  height: 12rem;
+
+}
+
+.resumeItemList .bi {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem;
+
+  z-index: 56;
+ 
+}
+
+.resumeItemList .bi img{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 6rem;
+
+}
+
+.bounce{
+  animation-name: bounce;
+  animation-timing-function: ease;
+  filter: drop-shadow(0rem 0rem 3rem rgb(255, 255, 255));
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-1rem); }
+  100% { transform: translateY(0); }
+}
+/* resume end*/
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/**
-* Desktop Navigation 
-*/
+
 #nav{
   grid-row: 1 / 1;
   grid-column: 1 / 1;
@@ -891,7 +1012,7 @@ img.bannerRotate{
 
   
 
-  /* menu toggle mobile*/
+  /* menu toggle desktop*/
 
   
   .menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(1) {
@@ -955,6 +1076,10 @@ img.bannerRotate{
 
 }
 
+/* hero end */
+
+/* featured */
+
 #featured {
   
   background-color: #211C0E;
@@ -985,9 +1110,16 @@ img.bannerRotate{
   align-content: center;
   z-index: 950;
   }
+
+  #featured p {
+    color: #ffffff;
+    text-align: center;
+    font: bold 2rem "Futura Bk Bt", sans-serif;
+ 
+    }
   
 
-
+/* featured end */
 
 h1.innerShade:before, 
 h1.innerShade:after {
@@ -1068,17 +1200,7 @@ h1.innerShade:after {
   padding-bottom: 2rem;
 }
 
-#contact h3 {
-  font: normal 3rem "Futura Bk BT", sans-serif;
-  height: 33%;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  position: relative;
-}
+
 
 #contact p{
   height: 33%;
@@ -1090,8 +1212,8 @@ h1.innerShade:after {
   align-content: center;
   text-align: center;
   position: relative;
-  font: normal 2rem "Futura Bk BT", sans-serif;
-
+  font: normal 1.5rem "Futura Bk BT", sans-serif;
+  text-shadow: 0rem 0rem .5rem #000 ;
 }
 
 .map {
@@ -1140,17 +1262,12 @@ h1.innerShade:after {
 }
 
 .form-group input.form-control {
-  padding: 0%;
   width: 100%;
   height: 3rem;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  text-align: center;
   border-style: solid;
   border-radius: .5rem;
-  border-width: .4rem;
+  border-width: .625rem;
   border-color: #746132;
 
 }
@@ -1192,19 +1309,23 @@ h1.innerShade:after {
   animation: animate-loading 1s linear infinite;
 }
 
+.animate-loading {
+  display: block;
+  position: relative;
+  background-image: url(../img/MenuStar.svg);
+}
+
 textarea {
-  background-color: #ffffff;
+  background-color: #CFBA7F;
   border-style: solid;
-  border-width: .5rem;
-  border-color: #746132;
+  border-width: 1rem;
+  border-image: url(../img/PaperEdge.svg) 10 round;
+
   resize: none;
   height: 10rem;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  text-align: center;
+
   
      
 }
@@ -1224,7 +1345,7 @@ textarea {
 
 
 .php-email-form input:focus {
-  border-color: #2487ce;
+  border-color: #CBC2AA;
 }
 
 .php-email-form input {
@@ -1245,7 +1366,7 @@ textarea {
   padding: 0;
   color: rgb(255, 255, 255);
   transition: 0.4s;
-  border-radius: 0px 0px 6px 6px;
+  border-radius: 0rem 0rem .5rem .5rem;
   justify-self: end;
 }
 
