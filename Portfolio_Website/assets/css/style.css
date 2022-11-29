@@ -175,20 +175,22 @@ input[type=text]:focus {
 
 
 .flex-container-featured{
-
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   margin: 0%;
   padding: 0%;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
   flex-direction: column;
-  background-size: cover;
-  box-shadow: 0rem 0rem 152rem -1rem rgb(0, 0, 0);
- 
+  position: relative;
+
 }
 
 .flex-container-contact{
@@ -307,10 +309,23 @@ input[type=text]:focus {
 .card-featured{
   display: flex;
   flex-direction: row;
-  padding: 1rem;
   margin:0%;
   width: 100%;
-  height: 100%;
+  height: 33%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  z-index: 5;
+   
+}
+
+.card-featured-buttons{
+  display: flex;
+  flex-direction: row;
+  margin:0%;
+  width: 100%;
+  height: 10rem;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -387,19 +402,7 @@ input[type=text]:focus {
 }
 
 
-.clipped-card {
 
-  -webkit-mask-image: url(../img/ResumeClip.svg);
-  mask-image: url(../img/ResumeClip.svg);
-  -webkit-mask-repeat: repeat-x;
-  mask-repeat: repeat-x;
-  mask-position: relative;
-  mask
-
-
-  box-shadow: 0rem 1rem 4rem #000;
-
-}
 
 
 
@@ -426,13 +429,13 @@ input[type=text]:focus {
   z-index: 999;
   width: 3rem;
   height: 3rem;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 1rem 1rem;
   border: #746132;
   border-style: solid;
   border-width: .5rem;
   background: #010b16;
   transition: all 1s;
-  opacity: 1;
+
   filter: drop-shadow( 0 0 .5rem rgb(0, 0, 0));
   
 }
@@ -572,12 +575,10 @@ input[type=text]:focus {
 /* resume */
 
 #resume {
-  clip-path: url("../img/ResumeClip.svg");
-  height: auto;
+
+  height: 100%;
   width: 100%;
-  z-index: 500;
-  box-shadow: 0rem 0rem 5rem #000;
-  position: relative;
+
 }
 
 #resume h1 {
@@ -597,25 +598,40 @@ input[type=text]:focus {
   padding: 3rem;
   color: #000;
   font: bold 3rem "Futura Bk BT", sans-serif;
-
+  height: 4rem;
+  width: 100%;
   text-align: center;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
+  z-index: 657;
+}
 
+#resume h3 {
+  padding: 2rem;
+  color: #000;
+  font: bold 2rem "Futura Bk BT", sans-serif;
+  height: 4rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  z-index: 657;
 }
 
 #resume p {
 
-
+  z-index: 657;
   color: #000;
 }
 
 .resume {
 
-  background: #cfba7f;
-  height: auto;
+
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -628,27 +644,67 @@ input[type=text]:focus {
   
 }
 
-.resumeItem {
-  padding: 3rem;
+.flex-container-resume-cell{
+  background: #CFBA7F;
+  height: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.resumeItem {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
+  z-index: 1;
+}
+
+
+
+#z0 {
+  z-index: 5;
+  filter: drop-shadow(0rem 0rem 1rem #000);
+}
+
+#z1 {
+  z-index: 4;
+  filter: drop-shadow(0rem 0rem 1rem #000);
+}
+
+#z2 {
+  z-index: 3;
+  filter: drop-shadow(0rem 0rem 1rem #000);
+}
+
+#z3 {
+  z-index: 2;
+  filter: drop-shadow(0rem 0rem 1rem #000);
+}
+
+#z4 {
+  z-index: 1;
+  filter: drop-shadow(0rem 0rem 1rem #000);
 }
 
 .resumeItemList{
-
+  
   padding-top: 2rem;
   padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  height: auto;
   text-align: center;
   justify-content: center;
   justify-items: center;
@@ -667,6 +723,7 @@ input[type=text]:focus {
   align-content: center;
   width: auto;
   height: 12rem;
+  z-index: 2;
 
 }
 
@@ -677,8 +734,6 @@ input[type=text]:focus {
   align-items: center;
   align-content: center;
   padding: 1rem;
-
-  z-index: 56;
  
 }
 
@@ -693,11 +748,12 @@ input[type=text]:focus {
 
 }
 
-.bounce{
+.bounce {
   animation-name: bounce;
   animation-timing-function: ease;
   filter: drop-shadow(0rem 0rem 3rem rgb(255, 255, 255));
 }
+
 @keyframes bounce {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-1rem); }
@@ -780,7 +836,7 @@ nav {
   border-color: #746132;
   border-width: .7rem;
   border-style: solid;
-  box-shadow: 0rem 0rem 1rem #ffffff;
+  box-shadow: 0rem 0rem .8rem #ffffff;
   margin: 0%;
   padding: 0%;
 
@@ -803,7 +859,7 @@ nav {
   border-color: #746132;
   border-width: .7rem;
   border-style: solid;
-  box-shadow: 0rem 0rem 1rem #ffffff;
+  box-shadow: 0rem 0rem .8rem #ffffff;
   margin: 0%;
   padding: 0%;
 }
@@ -856,7 +912,7 @@ a {
 }
 
 .visible {
-grid-column: 1 / 1;
+  grid-column: 1 / 1;
   grid-row: 1 / 1;
   animation: 1s ease-in-out linear;
   transition: all 1s ease-in-out;
@@ -947,7 +1003,7 @@ img.bannerRotate{
   justify-items: center;
   align-items: center;
   align-content: center;
-  font: bold 1rem "Futura Bk BT", sans-serif;
+  font: bold 0rem 0rem 1rem 0rem "Futura Bk BT", sans-serif;
   transition: all 1s ease-in-out;
 
 }
@@ -1088,15 +1144,50 @@ img.bannerRotate{
 
 #featured {
   
-  background-color: #211C0E;
+
   width: 100%;
-  height: 100vh;
-  background-size: cover;
+  height: 100%;
+  background: #211C0E;
   box-shadow: 0rem 0rem 3rem rgb(0, 0, 0);
-  z-index: 666;
-  position: relative;
+  z-index: 5;
+ 
 
 }
+
+.featured {
+  
+
+  width: 100%;
+  height: 100%;
+
+  box-shadow: 0rem 0rem 3rem rgb(0, 0, 0);
+  z-index: 5;
+ 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+
+.featured img{
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+
+
+}
+
 
 #featured h1 {
   color: #ffffff;
@@ -1104,9 +1195,9 @@ img.bannerRotate{
   font: bold 3.5rem "Futura Bk Bt", sans-serif;
   letter-spacing: .7rem;
   margin-right: -.7rem;
-  padding-top: 1rem;
+ 
   width: 100%;
-  height: 100%;
+  height: 10rem;
   display: flex;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1257,7 +1348,7 @@ h1.innerShade:after {
   padding: 0%;
   width: 80%;
   padding-top: 1rem;
-  padding-bottom: 1rem ;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -1324,8 +1415,8 @@ h1.innerShade:after {
 textarea {
   background-color: #CFBA7F;
   border-style: solid;
-  border-width: 1rem;
-  border-image: url(../img/PaperEdge.svg) 10 round;
+  border-width: .6rem;
+ 
 
   resize: none;
   height: 10rem;
@@ -1478,7 +1569,7 @@ textarea {
 
 #footer .social-links a {
 
-  font: normal bold 1rem "Futura Bk BT", sans-serif;
+  font: normal bold 0rem 0rem 1rem 0rem "Futura Bk BT", sans-serif;
   text-decoration: none;
   display: flex;
   background: #083D77;
@@ -1582,7 +1673,7 @@ textarea {
   background-color: #fefefe;
   margin: auto;
   padding: 1rem;
-  border: 1px solid #888;
+  border: 1rem solid #888;
   width: 90%;
   height: 90%;
 
@@ -1592,10 +1683,10 @@ textarea {
 .close {
   color: #aaaaaa;
   float: right;
-  padding: 1rem;
+  padding: 1rem 1rem 0rem 0rem;
   font-size: 2rem;
   font-weight: bold;
-  z-index: 10001;
+  z-index: 1;
 }
 
 .close:hover,
@@ -1655,7 +1746,7 @@ color: #fff;
 
   
   .carouselCell:nth-child(3) {
-      transform: rotateY( 240deg) translateZ(20rem); 
+      transform: rotateY(240deg) translateZ(20rem); 
     }
   
   
@@ -1671,6 +1762,8 @@ color: #fff;
 .glow {
 
   animation: glow  2.5s infinite alternate;
+  opacity: 1;
+
 }
 
 
@@ -1692,10 +1785,10 @@ color: #fff;
 
 @keyframes glow {
   from {
-    filter: drop-shadow( 0 0 2px #fff) drop-shadow( 0 0 .1rem #f5c782)  drop-shadow( 0 0 .2rem #e6d700);
+    filter: drop-shadow( 0 0 .2rem #fff) drop-shadow( 0 0 1rem  #f5c782)  drop-shadow( 0 0 .2rem #e6d700);
   }
   to {
-    filter: drop-shadow( 0 0 10px #fff) drop-shadow( 0 0 .1rem #00e6ad)  drop-shadow( 0 0 .2rem #e60073);
+    filter: drop-shadow( 0 0 .4rem #fff) drop-shadow( 0 0 1rem  #00e6ad)  drop-shadow( 0 0 .2rem #e60073);
   }
 }
 
