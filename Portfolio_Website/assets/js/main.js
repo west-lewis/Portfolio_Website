@@ -55,6 +55,11 @@
 
   const body = document.body;
   
+
+  /**
+   * menu scroll 
+   */
+
   const scrollUp = "scroll-up";
   const scrollDown = "scroll-down";
   let lastScroll = 0; 
@@ -70,7 +75,7 @@
       // down
       body.classList.remove(scrollUp);
       body.classList.add(scrollDown);
-      lottiePlayer.play();
+      lottiePlayer.play();scroll
     } else if (
       currentScroll < lastScroll &&
       body.classList.contains(scrollDown)
@@ -143,7 +148,7 @@
   function menutoggleClicked() {
     var x = document.getElementById("respond");
     if (x.className === "header") {
-      x.className += " responsive";
+      x.className += "responsive";
     } else {
       x.className = "header";
     }
