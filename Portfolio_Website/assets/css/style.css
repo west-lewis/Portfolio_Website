@@ -217,6 +217,10 @@ li {
   align-content: center;
   flex-direction: column;
   box-sizing: border-box;
+  border: 5rem solid;
+
+  border-image: url(../img/Vector.png) 33% repeat round;
+  border-image-outset: 4rem;
 }
 
 /* flex-container-contact */
@@ -727,7 +731,11 @@ nav {
   transition: all 1s ease-in-out;
   transform:  translateY(32rem) scale(120%);
   
-  
+}
+
+.menuToggle.active  ~ #nav.visible ul li.menuItem a {
+  transition: all 1s ease-in-out;
+  pointer-events:auto;
 }
 
 .visible {
