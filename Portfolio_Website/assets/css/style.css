@@ -217,10 +217,18 @@ li {
   align-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  border: 5rem solid;
 
-  border-image: url(../img/Vector.png) 33% repeat round;
-  border-image-outset: 4rem;
+}
+
+.flex-container-resume img{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+
 }
 
 /* flex-container-contact */
@@ -361,6 +369,26 @@ li {
   z-index: 2;
 
 }
+
+.card-resumeConcept{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: 90%;
+  max-width: 32rem;
+
+}
+
+.card-resumeConcept img{
+  filter: drop-shadow(0rem 0rem 1rem rgb(255, 255, 255));
+  z-index: 0;
+}
+
+
 
 .card-resumeList .bi {
   display: flex;
@@ -1069,10 +1097,12 @@ padding: 1rem;
 }
 
 #resume h4 {
-  color: #000;
-  font: bold 2rem "Futura Bk BT", sans-serif;
+  color: #000811;
+  font: bold italic 3rem "Futura Bk BT", sans-serif;
   padding: 1rem;
-
+  z-index: 1;
+  width: 100%;
+  text-shadow: -1px -1px 0 #8C7336, 1px -1px 0 #8C7336, -1px 1px 0 #8C7336, 1px 1px 0 #8C7336;
 }
 
 .resume {
