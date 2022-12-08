@@ -146,14 +146,12 @@ input[type=text]:focus {
 }
 
 ul {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   list-style: none;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  width: 25%;
+  height: 25%;
   transition: all 1s ease-in-out;
 }
 
@@ -163,6 +161,32 @@ li {
   align-items: center;
   
 }
+
+li a{
+  display: block;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  
+}
+
+button {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+
+
+
+
 
 /* ------------end base style--------- */
 
@@ -397,7 +421,10 @@ li {
   align-items: center;
   align-content: center;
   padding: 1rem;
- 
+  min-width: 4rem;
+  max-width: 16rem;
+  height: 8rem;
+  filter: drop-shadow(0rem 0rem 1rem rgb(255, 255, 255));
 }
 
 .card-resumeList .bi img{
@@ -407,10 +434,21 @@ li {
   align-items: center;
   align-content: center;
   width: 100%;
-  height: 6rem;
+  height: 8rem;
 
 }
 
+#small {
+  max-width: 8rem;
+}
+
+#medium {
+  max-width: 16rem;
+}
+
+#large {
+  max-width: 32rem;
+}
 
 /* contact card */
 
@@ -638,25 +676,52 @@ img.bannerRotate{
   align-content: center;
   opacity: 0;
   transition: all 1s ease-in-out;
-  width: 100%;
-  
+
 }
 
 nav {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  display: none;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
   -webkit-user-select: none; 
   -ms-user-select: none; 
   user-select: none; 
   filter: drop-shadow(0rem 0rem 3rem #000);
 }
 
+#drop {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.menu {
+  position: relative;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+
+}
+
+
+.menu,
 .menuToggle,
-.menuItem{
+a.menuItem{
   grid-row: 1 / 1;
   grid-column: 1 / 1;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
+
 }
 
 .menuToggle {
@@ -667,112 +732,82 @@ nav {
   cursor: pointer;
   opacity: 1;
   transition: all 1s ease-in-out;
+  border: none;
+  background: none;
 
 }
 
-.menuToggle::before{
-  animation: glowRotate 10s infinite alternate;
+.menuToggle:hover {
+  width: 80%;
+  height: auto;
+  transition: all 1s ease-in-out;
   
+
 }
 
-.menuItem {
-  position: absolute;
+
+a.menuItem {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1 ;
+  text-align: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  width: 8rem;
-  height: auto;
+  max-width: 8rem;
   -webkit-user-select: none; 
   -ms-user-select: none; 
   user-select: none;
   pointer-events: none;
   transition: all 1s ease-in-out;
-  
 }
 
-.menuItem:hover {
+a.menuItem:hover {
+  max-width:10rem;
   transition: all 1s ease-in-out;
   animation: glow 10s linear infinite normal;
 
 }
 
-.menuItem a{
+a.menuItem img,
+a.menuItem p {
   grid-column: 1 / 1;
   grid-row: 1 / 1 ;
-  font: bold 1rem "Futura Bk BT", sans-serif;
-  transition: all 1s ease-in-out;
-
-}
-
-.menuItem img{
-  grid-column: 1 / 1;
-  grid-row: 1 / 1 ;
-
-  transition: all 1s ease-in-out;
   
 }
 
-.menuToggle.active {
-  animation: none;
-  width: 80%;
-  height: auto;
-  transition: all 1s ease-in-out;
-
+a.menuItem p {
+  color: #fff;
+  font: .5rem;
+  
 }
 
-.menuToggle.active  ~  #nav.visible ul li.menuItem:hover,
-.menuToggle.active  ~  #nav.visible ul li.menuItem a:hover{ 
-  transition: all .5 ease-in-out;
-  animation: glow 1.5s  infinite alternate;
-  font-size: 2rem;
-
+.show {
+  display: flex;
 }
 
-.menuToggle.active  ~  #nav.visible,
-.menuToggle.active  ~  #nav.visible ul  li.menuItem,
-.menuToggle.active  ~  #nav.visible ul li.menuItem a{ 
-  transition: all .5s ease-in-out;
-  z-index: 998;
-  opacity: 1;
-  -webkit-user-select: auto; 
-  -ms-user-select: auto; 
-  user-select: auto;
 
-}
-
-.menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(1) {
+.change .menuToggle  ~  #drop .menuItem:nth-child(1) {
   transition: all 1s ease-in-out;
   transform:   translateY(8rem) scale(120%);
 }
 
-.menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(2) {
+.change .menuToggle  ~  #drop .menuItem:nth-child(2) {
   transition: all 1s ease-in-out;
    transform:   translateY(16rem) scale(120%);
 }
 
-.menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(3) {
+.change .menuToggle  ~  #drop .menuItem:nth-child(3) {
   transition: all 1s ease-in-out;
    transform:   translateY(24rem) scale(120%);
 }
 
-.menuToggle.active  ~ #nav.visible ul li.menuItem:nth-child(4) {
+.change .menuToggle  ~ #drop .menuItem:nth-child(4) {
   transition: all 1s ease-in-out;
   transform:  translateY(32rem) scale(120%);
   
 }
 
-.menuToggle.active  ~ #nav.visible ul li.menuItem a {
-  transition: all 1s ease-in-out;
-  pointer-events:auto;
-}
 
-.visible {
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
-  animation: 1s ease-in-out linear;
-  transition: all 1s ease-in-out;
-
-}
 
 /*----------------------- end header----------------- */
 
@@ -1068,7 +1103,6 @@ color: #fff;
 #resume h1,
 #resume h2,
 #resume h3 {
-  text-decoration-line: underline;
   font: bold 3rem "Futura Bk BT", sans-serif;
   
 
@@ -1077,22 +1111,25 @@ color: #fff;
 #resume h1,
 #resume h2,
 #resume h3 {
-padding: 1rem;
+  padding: 1rem;
   height: 12rem;
 }
 
 #resume h1 {
-  color: rgb(255, 255, 255);
+  color: #000811;
 
 }
 
 #resume h2 {
-  color: #000;
+  color: #000811;
 
 }
 
 #resume h3 {
-  color: #000;
+  color: #000811;
+  line-height: 5rem;
+  text-decoration: underline double .4rem;
+  text-underline-offset: .5rem;
 
 }
 
@@ -1601,51 +1638,7 @@ textarea {
   /* menu toggle desktop*/
 
   
-  .menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(1) {
-    transition: all 1s ease-in-out;
-    transform:   translateY(8rem) scale(120%);
-  }
   
-  .menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(2) {
-    transition: all 1s ease-in-out;
-     transform:   translateY(16rem) scale(120%);
-  }
-  
-  .menuToggle.active  ~  #nav.visible ul li.menuItem:nth-child(3) {
-    transition: all 1s ease-in-out;
-     transform:   translateY(24rem) scale(120%);
-  }
-  
-  .menuToggle.active  ~ #nav.visible ul li.menuItem:nth-child(4) {
-    transition: all 1s ease-in-out;
-    transform:  translateY(32rem) scale(120%);
-    
-    
-  }
-  
-  .menuToggle.active  ~ #nav.visible ul li.menuItem a {
-    transition: all 1s ease-in-out;
-    pointer-events:auto;
-  }
-
-  .header.responsive{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-  }
-
-  .circle.responsive,
-  .topNav.responsive{
-    grid-column: 3 / 3;
-    grid-row: 1 / 1;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-  }
 
 
   .carouselCell:nth-child(1) {

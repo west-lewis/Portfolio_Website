@@ -145,42 +145,43 @@
 
 
 
-  function menutoggleClicked() {
-    var x = document.getElementById("respond");
-    if (x.className === "header") {
-      x.className += "responsive";
-    } else {
-      x.className = "header";
-    }
-  }
+
 
 
   // Setting up the Variables
-  var menutoggle = document.getElementById("nav-action");
-  var nav = document.getElementById("nav");
+
+
   
 
 
-  //setting up the listener
-  menutoggle.addEventListener("click", menutoggleClicked, false);
+  function menu() {
+    document.getElementById("drop").classList.toggle("show");
+  };
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.menuToggle')) {
+      var dropdowns = document.getElementsByClassName("nav");
+      var w;
+      for (w = 0; w < dropdowns.length; w++) {
+        var openDropdown = dropdowns[w];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  };
 
 
-  //setting up the clicked Effect
-  function menutoggleClicked() {
-    menutoggle.classList.toggle('active');
-    nav.classList.toggle('visible');
-  }
 
 
 
-
-
-
-    // Get the <span> element that closes the modal
+  // Setting up the Variables
     var modal = document.getElementById("myModal");
     var span = document.getElementsByClassName("close")[0];
-
     var modalToggle = document.getElementById("modalButton");
+
+  //setting up the listener
     modalToggle.addEventListener("click", modalButtonClicked , false);
 
     function modalButtonClicked() {
@@ -199,7 +200,7 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
-    }
+    };
  
 
 

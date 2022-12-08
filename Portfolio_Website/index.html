@@ -40,36 +40,43 @@
       <div class="topNav2">
         <div class="topNav3">
 
-          <div class="menuToggle glow" id="nav-action">
-            <img src="../Portfolio_Website/assets/img/Menu_Icon.png" alt="Menu">  
-          </div>
+        <div class="menu">
 
-          <nav id="nav">
-            <ul class="nav">
+          <button onclick="menu()" class="menuToggle glow">
+            <img src="../Portfolio_Website/assets/img/Menu_Icon.png">
+          </button>
 
-              <li class="menuItem">
-                <a href="#hero">ABOUT</a>
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
-              </li>
+          <div id="drop" class="nav">
+  
+            <a class="menuItem" href="#hero">
 
-              <li class="menuItem">
-                <a href="#featured">WORKS</a>
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
-              </li>
+              <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+              <p>ABOUT</p>
+            </a>
 
-              <li class="menuItem">
-                <a href="#resume">RESUME</a>
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
-              </li>
+            <a class="menuItem" href="#featured">
+              
+              <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+              <p>WORK</p>
+            </a>
 
-              <li class="menuItem">
-                <a href="#contact">CONTACT</a>
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
-              </li>
+            <a class="menuItem" href="#resume">
 
-            </ul>
-          </nav>
+              <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+              <p>RESUME</p>
+            </a>
+
+            <a class="menuItem" href="#contact">
+
+              <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+              <p>CONTACT</p>
+            </a>
+
+        
+          </div>  
+
         </div>
+
       </div>
     </div>
   </div>
@@ -190,16 +197,16 @@
           <h3>DESIGN TOOLS</h3>
 
           <div class="card-resumeList">
-            <i class="bi"><img src="assets/img/FigmaLogo.svg" alt="figma_logo"></i>
-            <i class="bi"><img src="assets/img/MiroLogo.svg" alt="miro_logo"></i>
-            <i class="bi"><img src="assets/img/TrelloLogo.svg" alt="trello_logo"></i>
-            <i class="bi"><img src="assets/img/AdobePhotoshopLogo.svg" alt="adobe_photoshop_logo"></i>
-            <i class="bi"><img src="assets/img/AdobeIllustratorLogo.svg" alt="adobe_illustrator_logo"></i>
-            <i class="bi"><img src="assets/img/MayaLogo.svg" alt="maya_logo"></i>
-            <i class="bi"><img src="assets/img/3dsMaxLogo.svg" alt="3ds_max_logo"></i>
-            <i class="bi"><img src="assets/img/UnrealEngineLogo.svg" alt="unreal_engine_logo"></i>
-            <i class="bi"><img src="assets/img/UnityTechnologiesLogo.svg" alt="unity_logo"></i>
-            <i class="bi"><img src="assets/img/GoogleWorkspaceLogo.svg" alt="google_workspace_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/FigmaLogo.svg" alt="figma_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/MiroLogo.svg" alt="miro_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/AdobePhotoshopLogo.svg" alt="adobe_photoshop_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/AdobeIllustratorLogo.svg" alt="adobe_illustrator_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/MayaLogo.svg" alt="maya_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/3dsMaxLogo.svg" alt="3ds_max_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/UnrealEngineLogo.svg" alt="unreal_engine_logo"></i>
+            <i class="bi" id="medium"><img src="assets/img/UnityTechnologiesLogo.svg" alt="unity_technologies_logo"></i>
+            <i class="bi" id="medium"><img src="assets/img/TrelloLogo.svg" alt="trello_logo"></i>
+            <i class="bi" id="large"><img src="assets/img/GoogleWorkspaceLogo.svg" alt="google_workspace_logo"></i>
           </div>
 
         </div>
@@ -212,12 +219,12 @@
             <img src="assets/img/LanguagesIcon.png">
           </i>
 
-          <h3>LANGUAGES</h3>
+          <h3>DESIGN LANGUAGES</h3>
 
           <div class="card-resumeList">
-            <i class="bi"><img src="assets/img/HTML5_Logo.svg" alt="html_logo"></i>
-            <i class="bi"><img src="assets/img/CSS3_logo_and_wordmark.svg" alt="css_logo"></i>
-            <i class="bi"><img src="assets/img/Unofficial_JavaScript_logo_2.svg" alt="javascript_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/HTML5Logo.svg" alt="html_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/CSS3Logo.svg" alt="css3_logo"></i>
+            <i class="bi" id="small"><img src="assets/img/JavaScriptLogo.svg" alt="javascript_logo"></i>
           </div>
 
         </div>
@@ -230,7 +237,7 @@
             <img src="assets/img/ConceptsIcon.png">
           </i>
 
-          <h3>DESIGN CONCEPTS</h3>
+          <h3>DESIGN CONCEPT KNOWLEDGE</h3>
 
           <i class="card-resumeConcept">
             <img src="assets/img/UserInterfaceDesign.png">
