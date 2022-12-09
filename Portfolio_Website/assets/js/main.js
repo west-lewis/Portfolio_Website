@@ -2,82 +2,75 @@
  
 
 
-(function() {
-  "use strict";
+
+
+  /*jshint esversion: 6 */
+
+
 
   /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
-    el = el.trim()
+    el = el.trim();
     if (all) {
-      return [...document.querySelectorAll(el)]
+      return [...document.querySelectorAll(el)];
     } else {
-      return document.querySelector(el)
+      return document.querySelector(el);
     }
-  }
+  };
 
 
   /**
    * Easy on scroll event listener 
    */
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
+    el.addEventListener('scroll', listener);
+  };
+
+
+var mainMenu = document.getElementById("mainMenu");
+  /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function menuToggle() {
+  document.getElementById("drop").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (event.target == mainMenu) {
+    var dropdowns = document.getElementsByClassName("dropdown");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.toggle('show');
+      }
+    }
   }
-
-
+}
 
   /**
    * Back to top button
    */
-  let backtotop = select('.back-to-top')
+  let backtotop = select('.back-to-top');
   if (backtotop) {
     const toggleBacktotop = () => {
       if (window.scrollY > 500) {
-        backtotop.classList.add('active')
+        backtotop.classList.add('visible');
       } else {
-        backtotop.classList.remove('active')
+        backtotop.classList.remove('visible');
       }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+    };
+    window.addEventListener('load', toggleBacktotop);
+    onscroll(document, toggleBacktotop);
   }
 
-  const body = document.body;
+  
   
 
-
   
-  /**
-   * menu scroll 
-   */
-
-  const scrollUp = "scroll-up";
-  const scrollDown = "scroll-down";
-  let lastScroll = 0; 
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll <= 0) {
-      body.classList.remove(scrollUp);
-      return;
-    }
   
-    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
-      // down
-      body.classList.remove(scrollUp);
-      body.classList.add(scrollDown);
-      lottiePlayer.play();scroll
-    } else if (
-      currentScroll < lastScroll &&
-      body.classList.contains(scrollDown)
-    ) {
-      // up
-      body.classList.remove(scrollDown);
-      body.classList.add(scrollUp);
-    }
-    lastScroll = currentScroll;
-  });
   
 
   /**
@@ -86,7 +79,7 @@
   let preloader = select('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
-      preloader.remove()
+      preloader.remove();
     });
   }
 
@@ -108,7 +101,7 @@
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
     modal.style.display = "none";
-  }
+  };
   
 
   // When the user clicks anywhere outside of the modal, close it
@@ -118,7 +111,35 @@
     }
   };
 
-
+/**
+* What to do when an item enters the screen
+* If it is in the screen, isIntersecting will be true.
+* Add a class when it is.
+*/
+const intersectionCallback = (entries) => {
+  for (const entry of entries) { // Loop over all elements that either enter or exit the view.
+    if (entry.isIntersecting) { // This is true when the element is in view.
+      entry.target.classList.add('show'); // Add a class.
+    }
+  }
+  };
+  
+  /**
+  * Create a observer and use the instersectionCallback as 
+  * the instructions for what to do when an element enters
+  * or leaves the view
+  */
+  const observer = new IntersectionObserver(intersectionCallback);
+  
+  /**
+  * Get all .item elements and loop over them.
+  * Observe each individual item.
+  */
+  const items = document.querySelectorAll('.bounce .glow');
+  for (const item of items) {
+  observer.observe(item);
+  }
+  
 
 var carousel = document.querySelector('.carousel');
 var cells = carousel.querySelectorAll('.carouselCell');
@@ -129,7 +150,7 @@ var isHorizontal = true;
 var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
 var radius, theta;
 var cellCount = 3;
-var selectedIndex = 0;
+
 
 function rotateCarousel() {
   var angle = selectedIndex / cellCount * -360;
@@ -149,7 +170,7 @@ nextButton.addEventListener( 'click', function() {
 });
 
 function changeCarousel() {
-  cellCount = cellsRange.value;
+
   theta = 360 / cellCount;
   var cellSize = isHorizontal ? cellWidth : cellHeight;
   radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / cellCount ) );
@@ -166,103 +187,18 @@ function changeCarousel() {
       cell.style.transform = 'none';
     }
   }
-
-  rotateCarousel();
-  
 }
 
-var orientationRadios = document.querySelectorAll('input[name="orientation"]');
-( function() {
-  for ( var i=0; i < orientationRadios.length; i++ ) {
-    var radio = orientationRadios[i];
-    radio.addEventListener( 'change', onOrientationChange );
-  }
-})();
-
-function onOrientationChange() {
-  var checkedRadio = document.querySelector('input[name="orientation"]:checked');
-  isHorizontal = checkedRadio.value == 'horizontal';
-  rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
-  changeCarousel();
-}
-
-// set initials
-onOrientationChange();
-
-})()
 
 
-/**
-* What to do when an item enters the screen
-* If it is in the screen, isIntersecting will be true.
-* Add a class when it is.
-*/
-const intersectionCallback = (entries) => {
-for (const entry of entries) { // Loop over all elements that either enter or exit the view.
-  if (entry.isIntersecting) { // This is true when the element is in view.
-    entry.target.classList.add('show'); // Add a class.
-  }
-}
-}
 
-/**
-* Create a observer and use the instersectionCallback as 
-* the instructions for what to do when an element enters
-* or leaves the view
-*/
-const observer = new IntersectionObserver(intersectionCallback);
 
-/**
-* Get all .item elements and loop over them.
-* Observe each individual item.
-*/
-const items = document.querySelectorAll('.bounce .glow');
-for (const item of items) {
-observer.observe(item);
-}
+
+
+
 
   
 
-  AOS.init();
-
-  // You can also pass an optional settings object
-  // below listed default settings
-  AOS.init({
-    // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: 'aos-init', // class applied after initialization
-    animatedClassName: 'aos-animate', // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-    
-
-    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 120, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 400, // values from 0 to 3000, with step 50ms
-    easing: 'ease', // default easing for AOS animations
-    once: false, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
-    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-
-  });
-
- 
-
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
-  });
 
 
 
