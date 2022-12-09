@@ -1338,7 +1338,7 @@ textarea {
 }
 
 .php-email-form button[type=submit]:hover {
-  
+  display: none;
 }
 
 @-webkit-keyframes animate-loading {

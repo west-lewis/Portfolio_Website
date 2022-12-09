@@ -1,4 +1,7 @@
 
+ 
+
+
 (function() {
   "use strict";
 
@@ -14,19 +17,6 @@
     }
   }
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
 
   /**
    * Easy on scroll event listener 
@@ -56,6 +46,8 @@
   const body = document.body;
   
 
+
+  
   /**
    * menu scroll 
    */
@@ -98,6 +90,136 @@
     });
   }
 
+
+
+  // Setting up the Variables
+  var modal = document.getElementById("myModal");
+  var span = document.getElementsByClassName("close")[0];
+  var modalToggle = document.getElementById("modalButton");
+
+//setting up the listener
+  modalToggle.addEventListener("click", modalButtonClicked , false);
+
+  function modalButtonClicked() {
+      modal.style.display = "block";
+    }
+
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+
+
+var carousel = document.querySelector('.carousel');
+var cells = carousel.querySelectorAll('.carouselCell');
+var selectedIndex = 0;
+var cellWidth = carousel.offsetWidth;
+var cellHeight = carousel.offsetHeight;
+var isHorizontal = true;
+var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
+var radius, theta;
+var cellCount = 3;
+var selectedIndex = 0;
+
+function rotateCarousel() {
+  var angle = selectedIndex / cellCount * -360;
+  carousel.style.transform = 'translateZ(-18rem) rotateY(' + angle + 'deg)';
+}
+
+var prevButton = document.querySelector('.previous-button');
+prevButton.addEventListener( 'click', function() {
+  selectedIndex--;
+  rotateCarousel();
+});
+
+var nextButton = document.querySelector('.next-button');
+nextButton.addEventListener( 'click', function() {
+  selectedIndex++;
+  rotateCarousel();
+});
+
+function changeCarousel() {
+  cellCount = cellsRange.value;
+  theta = 360 / cellCount;
+  var cellSize = isHorizontal ? cellWidth : cellHeight;
+  radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / cellCount ) );
+  for ( var i=0; i < cells.length; i++ ) {
+    var cell = cells[i];
+    if ( i < cellCount ) {
+      // visible cell
+      cell.style.opacity = 1;
+      var cellAngle = theta * i;
+      cell.style.transform = rotateFn + '(' + cellAngle + 'deg) translateZ(' + radius + 'px)';
+    } else {
+      // hidden cell
+      cell.style.opacity = 0;
+      cell.style.transform = 'none';
+    }
+  }
+
+  rotateCarousel();
+  
+}
+
+var orientationRadios = document.querySelectorAll('input[name="orientation"]');
+( function() {
+  for ( var i=0; i < orientationRadios.length; i++ ) {
+    var radio = orientationRadios[i];
+    radio.addEventListener( 'change', onOrientationChange );
+  }
+})();
+
+function onOrientationChange() {
+  var checkedRadio = document.querySelector('input[name="orientation"]:checked');
+  isHorizontal = checkedRadio.value == 'horizontal';
+  rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
+  changeCarousel();
+}
+
+// set initials
+onOrientationChange();
+
+})()
+
+
+/**
+* What to do when an item enters the screen
+* If it is in the screen, isIntersecting will be true.
+* Add a class when it is.
+*/
+const intersectionCallback = (entries) => {
+for (const entry of entries) { // Loop over all elements that either enter or exit the view.
+  if (entry.isIntersecting) { // This is true when the element is in view.
+    entry.target.classList.add('show'); // Add a class.
+  }
+}
+}
+
+/**
+* Create a observer and use the instersectionCallback as 
+* the instructions for what to do when an element enters
+* or leaves the view
+*/
+const observer = new IntersectionObserver(intersectionCallback);
+
+/**
+* Get all .item elements and loop over them.
+* Observe each individual item.
+*/
+const items = document.querySelectorAll('.bounce .glow');
+for (const item of items) {
+observer.observe(item);
+}
 
   
 
@@ -144,162 +266,4 @@
 
 
 
-
-
-
-
-  // Setting up the Variables
-
-
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function menuButton() {
-  document.getElementById("drop").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.menuToggle')) {
-    var dropdowns = document.getElementsByClassName("dropdown");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-
-
-  // Setting up the Variables
-    var modal = document.getElementById("myModal");
-    var span = document.getElementsByClassName("close")[0];
-    var modalToggle = document.getElementById("modalButton");
-
-  //setting up the listener
-    modalToggle.addEventListener("click", modalButtonClicked , false);
-
-    function modalButtonClicked() {
-        modal.style.display = "block";
-      }
-
   
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-  
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
- 
-
-
-  var carousel = document.querySelector('.carousel');
-  var cells = carousel.querySelectorAll('.carouselCell');
-  var selectedIndex = 0;
-  var cellWidth = carousel.offsetWidth;
-  var cellHeight = carousel.offsetHeight;
-  var isHorizontal = true;
-  var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
-  var radius, theta;
-  var cellCount = 3;
-  var selectedIndex = 0;
-
-  function rotateCarousel() {
-    var angle = selectedIndex / cellCount * -360;
-    carousel.style.transform = 'translateZ(-18rem) rotateY(' + angle + 'deg)';
-  }
-
-  var prevButton = document.querySelector('.previous-button');
-  prevButton.addEventListener( 'click', function() {
-    selectedIndex--;
-    rotateCarousel();
-  });
-
-  var nextButton = document.querySelector('.next-button');
-  nextButton.addEventListener( 'click', function() {
-    selectedIndex++;
-    rotateCarousel();
-  });
-
-  function changeCarousel() {
-    cellCount = cellsRange.value;
-    theta = 360 / cellCount;
-    var cellSize = isHorizontal ? cellWidth : cellHeight;
-    radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / cellCount ) );
-    for ( var i=0; i < cells.length; i++ ) {
-      var cell = cells[i];
-      if ( i < cellCount ) {
-        // visible cell
-        cell.style.opacity = 1;
-        var cellAngle = theta * i;
-        cell.style.transform = rotateFn + '(' + cellAngle + 'deg) translateZ(' + radius + 'px)';
-      } else {
-        // hidden cell
-        cell.style.opacity = 0;
-        cell.style.transform = 'none';
-      }
-    }
-  
-    rotateCarousel();
-    
-  }
-  
-  var orientationRadios = document.querySelectorAll('input[name="orientation"]');
-  ( function() {
-    for ( var i=0; i < orientationRadios.length; i++ ) {
-      var radio = orientationRadios[i];
-      radio.addEventListener( 'change', onOrientationChange );
-    }
-  })();
-  
-  function onOrientationChange() {
-    var checkedRadio = document.querySelector('input[name="orientation"]:checked');
-    isHorizontal = checkedRadio.value == 'horizontal';
-    rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
-    changeCarousel();
-  }
-  
-  // set initials
-  onOrientationChange();
-
-})()
-
-
-/**
- * What to do when an item enters the screen
- * If it is in the screen, isIntersecting will be true.
- * Add a class when it is.
- */
- const intersectionCallback = (entries) => {
-  for (const entry of entries) { // Loop over all elements that either enter or exit the view.
-    if (entry.isIntersecting) { // This is true when the element is in view.
-      entry.target.classList.add('show'); // Add a class.
-    }
-  }
-}
-
-/**
- * Create a observer and use the instersectionCallback as 
- * the instructions for what to do when an element enters
- * or leaves the view
- */
-const observer = new IntersectionObserver(intersectionCallback);
-
-/**
- * Get all .item elements and loop over them.
- * Observe each individual item.
- */
-const items = document.querySelectorAll('.bounce .glow');
-for (const item of items) {
-  observer.observe(item);
-}
-
