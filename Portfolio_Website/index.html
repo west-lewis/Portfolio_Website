@@ -48,34 +48,35 @@
 
           <div class="mainMenu" id="mainMenu">
 
-            <button onclick="menuToggle()" class="menuToggle">
+            <button onclick="menuToggle()" class="menuToggle" id="menuButton">
               <img src="../Portfolio_Website/assets/img/Menu_Icon.png">
             </button>
-<!--/*bypass dropdown menu to create single item buttons with id=drop*/ -->
+
             <div id="drop" class="dropdown">
     
               <a class="menuItem" href="#hero">
 
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="ABOUT">
                 <p>ABOUT</p>
               </a>
 
-              <a class="menuItem" href="#featured">
+              <a class="menuItem" href="#work">
                 
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="WORK">
                 <p>WORK</p>
               </a>
 
               <a class="menuItem" href="#resume">
 
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
+                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="RESUME">
                 <p>RESUME</p>
               </a>
 
               <a class="menuItem" href="#contact">
 
-                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="Menu">
-                <p>CONTACT</p>
+                <img src="../Portfolio_Website/assets/img/MenuSelector.svg" alt="CONTACT">
+                <p>REACH</p>
+
               </a>
 
           
@@ -136,24 +137,25 @@
         <div class="card-featured">
 
           <div class="scene">
+            <!-- &&&figure out behind opacity issue: make focus opacity: 1, nonfocused opacity:0 -->
             <div class="carousel">
               
               <div class="carouselCell" id="modalButton">
 
                 <img src="assets/img/PAWSCAR.png" alt="paws">
 
-                <p>Non-Profit Website Redesign</p>
+                <h2>Non-Profit Website Redesign</h2>
               </div>
 
               <div class="carouselCell" id="modalButton">
 
                 <img src="assets/img/FCCCAR.png" alt="fcc">
-                <p>Government Website Redesign</p>
+                <h2>Government Website Redesign</h2>
               </div>
   
               <div class="carouselCell" id="modalButton">
                 <img src="assets/img/BnRCAR.png" alt="barksnrec">
-                <p>Mobile App Design Challenge</p>
+                <h2>Mobile App Design Challenge</h2>
               </div>
 
             </div>
@@ -184,7 +186,7 @@
   
 
 <!--======= Resume =======-->
-
+<!--&&&create card headline description contrast-->
   <section id="resume">
     <div class="resume">
 

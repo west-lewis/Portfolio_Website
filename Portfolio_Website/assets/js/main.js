@@ -34,11 +34,12 @@ var mainMenu = document.getElementById("mainMenu");
 toggle between hiding and showing the dropdown content */
 function menuToggle() {
   document.getElementById("drop").classList.toggle("show");
+  document.getElementById("menuButton").classList.toggle("dead");
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (event.target == mainMenu) {
+window.onclick = function() {
+  if (!event.target == menuToggle) {
     var dropdowns = document.getElementsByClassName("dropdown");
     var i;
     for (i = 0; i < dropdowns.length; i++) {

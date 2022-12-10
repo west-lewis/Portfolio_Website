@@ -217,7 +217,7 @@ button {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   margin: 0%;
   padding: 0%;
   padding-top: 6rem;
@@ -333,14 +333,14 @@ button {
   align-items: center;
   align-content: center;
   z-index: 5;
-   
+  filter:drop-shadow(0rem 0rem 1rem rgb(255, 0, 0) )
 }
 
 .card-featured-buttons{
   display: flex;
   flex-direction: row;
   margin:0%;
-  width: 100%;
+  width: 100vw;
   height: 10rem;
   justify-content: center;
   justify-items: center;
@@ -408,7 +408,7 @@ button {
 }
 
 .card-resumeConcept img{
-  filter: drop-shadow(0rem 0rem 1rem rgb(255, 255, 255));
+  filter: drop-shadow(0 0 .2rem #251c03);
   z-index: 0;
 }
 
@@ -424,7 +424,7 @@ button {
   min-width: 4rem;
   max-width: 16rem;
   height: 8rem;
-  filter: drop-shadow(0rem 0rem 1rem rgb(255, 255, 255));
+  filter: drop-shadow(0 0 1rem #251c03);
 }
 
 .card-resumeList .bi img{
@@ -694,15 +694,10 @@ button.menuToggle {
   background: none;
   animation: glow 10s linear infinite alternate;
   margin: 1rem;
- 
-}
-
-button.menuToggle:focus {
-  scale: 110%;
   transition: all 1s ease-in-out;
-  animation: none;
-
 }
+
+
 
 button.menuToggle img{
   width: 6rem;
@@ -712,18 +707,26 @@ button.menuToggle img{
 
 .dropdown {
 
-  display: none;
+  opacity: 0;
+  display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
   transition: all 1s ease-in-out;
   flex-direction: column;
-  filter: drop-shadow(0rem 0rem 3rem #000);
+  filter: drop-shadow(0rem 0rem 1rem #000);
   margin: 1rem;
-  transform: translateY(24rem);
+  pointer-events: none;
+  background:0rem 0rem 1rem #000;
+
 }
 
+.dead{
+  scale: 110%;
+  transition: all 1s ease-in-out;
+  animation: none;
+}
 
 
 .dropdown a.menuItem {
@@ -735,6 +738,7 @@ button.menuToggle img{
   overflow: visible;
   width: 10rem;
   height: 10rem;
+  filter: drop-shadow(0rem 0rem 1rem #000);
 }
 
 .dropdown a.menuItem:hover {
@@ -765,10 +769,12 @@ button.menuToggle img{
 }
 
 .show {
-  display: flex;
+  opacity: 1;
   transition: all 1s ease-in-out;
   width: 100%;
   height: 100%;
+  pointer-events: auto;
+  transform: translateY(24rem);
 }
 
 
@@ -800,8 +806,7 @@ button.menuToggle img{
   border-width: .5rem;
   background: #010b16;
   transition: all 1s;
-
-  filter: drop-shadow( 0 0 .5rem rgb(0, 0, 0));
+  filter: drop-shadow(0 0 1rem #251c03);
   
 }
 
@@ -869,7 +874,9 @@ button.menuToggle img{
 
 }
 
-#featured p {
+
+
+#featured h2 {
   color: #ffffff;
   text-align: center;
   font: bold 2rem "Futura Bk Bt", sans-serif;
@@ -948,7 +955,7 @@ button.menuToggle img{
 /* featured carousel */ 
 
 .scene {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -956,6 +963,9 @@ button.menuToggle img{
   align-items: center;
   align-content: center;
   z-index: 997;
+  padding: 1rem;
+
+
 }
 
 .carousel {
@@ -969,6 +979,7 @@ button.menuToggle img{
   align-items: center;
   align-content: center;
 
+
 }
 
 .carouselCell {
@@ -981,21 +992,24 @@ button.menuToggle img{
   align-items: center;
   align-content: center;
   flex-direction: column;
-  transition: transform 1s, opacity 1s;
+
+
 
 }
 
-.carouselCell p {
+.carouselCell h2 {
+  padding: 1rem;
 color: #fff;
-
+font: bold 2rem "Futura Bk Bt", sans-serif;
 }
 
 .carouselCell img{
+
   width: 100%;
   height: auto;
   max-width: 1920px;
   max-height: 1080px;
-  box-shadow: 0rem 0rem 30rem  rgb(0, 0, 0);
+
 
 }
 
@@ -1016,6 +1030,7 @@ color: #fff;
 
 .carouselCell:nth-child(1) {
   transform: rotateY( 0deg) translateZ(20rem);
+  
 }
     
 .carouselCell:nth-child(2) {
@@ -1032,6 +1047,7 @@ color: #fff;
 .next-button {
   cursor: pointer;
   width: 100%;
+  margin: 1rem;
   padding: 1rem;
   transition: 0.6s ease;
   display: flex;
@@ -1622,7 +1638,7 @@ textarea {
     transform: rotateY( 240deg) translateZ(25rem); }
     
   .carousel {
-    width: 50%;
+    
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 1s;
@@ -1658,7 +1674,7 @@ textarea {
 
   }
 
- #featured {
+ #work {
     width: 100%;
     height:80rem;
 
