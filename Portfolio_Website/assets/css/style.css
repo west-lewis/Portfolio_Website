@@ -182,6 +182,28 @@ button {
   align-content: center;
 }
 
+::-webkit-scrollbar {
+  width: .8rem;
+  z-index: 999;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.4);
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: .5rem;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #746132;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
 
 
 

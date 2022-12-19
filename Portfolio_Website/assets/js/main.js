@@ -38,8 +38,8 @@ function menuToggle() {
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function() {
-  if (!event.target == menuToggle) {
+window.onclick = function(event) {
+  if (event.target == mainMenu) {
     var dropdowns = document.getElementsByClassName("dropdown");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
